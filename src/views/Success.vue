@@ -1,5 +1,5 @@
 <template>
   <div class="success">
-    <h1>This is an about page</h1>
+    <h1>This is an success page</h1>
   </div>
 </template>

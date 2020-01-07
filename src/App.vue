@@ -6,7 +6,7 @@
         $t("header.nav.shop")
       }}</router-link>
       |
-      <router-link :to="'/' + $i18n.locale + '/about'">{{
+      <router-link :to="'/' + $i18n.locale + '/login'">{{
         $t("header.nav.login")
       }}</router-link>
     </div>
