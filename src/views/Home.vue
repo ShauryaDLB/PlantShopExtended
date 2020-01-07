@@ -1,10 +1,16 @@
 <template>
-  <div class="home"></div>
+  <div class="home">
+    <VideoModals />
+  </div>
 </template>
 
 <script>
+import VideoModals from "@/components/VideoModals.vue";
+
 export default {
   name: "home",
-  components: {}
+  components: {
+    VideoModals
+  }
 };
 </script>

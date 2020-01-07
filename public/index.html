@@ -14,6 +14,30 @@
     />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>plantshop-vue</title>
+
+    <!-- Embed Webtrekk Tracking Script v4 Pixel  -->
+    <script src="js/webtrekk_v4.min.js"></script>
+
+    <!-- Embed Webtrekk media tracking script -->
+    <script src="js/webtrekk_mediaTracking.min.js"></script>
+
+    <!-- Seitenspezifische Konfiguration Webtrekk v4 Pixel -->
+    <script type="text/javascript">
+      var pageconfig = {
+        contentId: "", // generiert eine automatische Content ID aus der URL
+        linkTrack: "link", // aktiviert das Linktracking [link oder standard]
+        linkTrackAttribute: "id"
+      };
+      var wt = new webtrekkV3(pageconfig);
+      wt.contentGroup = {
+        11: "alle blumen"
+      };
+
+      wt.sendinfo();
+    </script>
+
+    <!-- Konfiguration Mediatracking -->
+    <script src="js/webtrekk_youtubeMediaTracking.js"></script>
   </head>
   <body>
     <noscript>
