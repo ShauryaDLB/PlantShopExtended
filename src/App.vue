@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <div id="nav">
       <router-link :to="'/' + $i18n.locale">{{
         $t("header.nav.shop")
@@ -12,6 +13,17 @@
     <router-view />
   </div>
 </template>
+
+<script>
+import Header from "@/components/Header.vue";
+
+export default {
+  name: "App",
+  components: {
+    Header
+  }
+};
+</script>
 
 <style>
 #app {
