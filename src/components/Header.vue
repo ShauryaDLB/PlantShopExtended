@@ -1,11 +1,10 @@
 <template>
   <div class="header">
-    <!-- nav-bar -->
     <div class="top-nav-bar">
       <div class="search-box">
         <a href="index.html">
           <img
-            :src="'@/assets/img/logo_200x200.png'"
+            src="@/assets/img/logo_200x200.png"
             alt="Plant-Shop-Logo"
             class="logo"
           />
@@ -59,19 +58,4 @@ export default {
 };
 </script>
 
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
+<style scoped></style>
