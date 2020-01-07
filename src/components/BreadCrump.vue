@@ -1,15 +1,16 @@
 <template>
-  <div>
-    <ul class="breadcrumb">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">On Sale</a></li>
-      <li><a href="#">Lilien</a></li>
-      <li>Radebeul</li>
-    </ul>
-  </div>
+  <ul class="breadcrumb">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="#">On Sale</a></li>
+    <li><a href="#">Lilien</a></li>
+    <li>Radebeul</li>
+  </ul>
 </template>
+
 <script>
-export default {};
+export default {
+  name: "BreadCrump"
+};
 </script>
 
 <style scoped>

@@ -2,13 +2,13 @@
   <div class="header">
     <div class="top-nav-bar">
       <div class="search-box">
-        <a href="index.html">
+        <router-link :to="'/' + $i18n.locale">
           <img
             src="@/assets/img/logo_200x200.png"
             alt="Plant-Shop-Logo"
             class="logo"
           />
-        </a>
+        </router-link>
 
         <router-link :to="'/' + $i18n.locale"
           ><h1>{{ $t("title") }}</h1></router-link
