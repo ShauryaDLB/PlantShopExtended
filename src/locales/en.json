@@ -1,9 +1,18 @@
 {
-  "message": "hello i18n !!",
+  "title": "Plant Shop",
   "header": {
     "nav": {
       "shop": "Shop",
+      "forum": "Forum",
       "login": "Login"
+    },
+    "cart": {
+      "title": "Cart",
+      "image": "Image",
+      "name": "Name",
+      "price": "Price",
+      "qty": "Qty",
+      "buy": "Buy Now"
     }
   }
 }
