@@ -5,6 +5,7 @@
     <VideoModals />
     <CarouselSlider />
     <FeaturedCategories />
+    <OnSaleProducts />
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import Title from "@/components/Title.vue";
 import VideoModals from "@/components/VideoModals.vue";
 import CarouselSlider from "@/components/CarouselSlider.vue";
 import FeaturedCategories from "@/components/FeaturedCategories.vue";
+import OnSaleProducts from "@/components/OnSaleProducts.vue";
 
 export default {
   name: "home",
@@ -22,7 +24,8 @@ export default {
     Title,
     VideoModals,
     CarouselSlider,
-    FeaturedCategories
+    FeaturedCategories,
+    OnSaleProducts
   }
 };
 </script>
