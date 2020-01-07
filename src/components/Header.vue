@@ -1,64 +1,61 @@
 <template>
-  <div class="header">
-    <div class="top-nav-bar">
-      <div class="search-box">
-        <router-link :to="'/' + $i18n.locale">
-          <img
-            src="@/assets/img/logo_200x200.png"
-            alt="Plant-Shop-Logo"
-            class="logo"
-          />
-        </router-link>
+  <div class="header top-nav-bar">
+    <div class="search-box">
+      <router-link :to="'/' + $i18n.locale">
+        <img
+          src="@/assets/img/logo_200x200.png"
+          alt="Plant-Shop-Logo"
+          class="logo"
+        />
+      </router-link>
 
-        <router-link :to="'/' + $i18n.locale"
-          ><h1>{{ $t("title") }}</h1></router-link
-        >
-        <input type="text" class="form-control" />
-        <span class="input-group-text"><i class="fa fa-search"></i></span>
-      </div>
-      <div class="menu-bar">
-        <ul>
-          <li class="submenu">
-            <router-link :to="'/' + $i18n.locale + '/login'"
-              ><i class="fa fa-shopping-cart"></i
-              >{{ $t("header.cart.title") }}(0)</router-link
-            >
-            <div id="shopping-cart">
-              <table id="cart-content" class="u-full-width">
-                <thead>
-                  <tr>
-                    <th>{{ $t("header.cart.image") }}</th>
-                    <th>{{ $t("header.cart.name") }}</th>
-                    <th>{{ $t("header.cart.price") }}</th>
-                    <th>{{ $t("header.cart.qty") }}</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody></tbody>
-              </table>
+      <router-link :to="'/' + $i18n.locale"
+        ><h1>{{ $t("title") }}</h1></router-link
+      >
+      <input type="text" class="form-control" />
+      <span class="input-group-text"><i class="fa fa-search"></i></span>
+    </div>
+    <div class="menu-bar">
+      <ul>
+        <li class="submenu">
+          <router-link :to="'/' + $i18n.locale + '/login'"
+            ><i class="fa fa-shopping-cart"></i
+            >{{ $t("header.cart.title") }}(0)</router-link
+          >
+          <div id="shopping-cart">
+            <table id="cart-content" class="u-full-width">
+              <thead>
+                <tr>
+                  <th>{{ $t("header.cart.image") }}</th>
+                  <th>{{ $t("header.cart.name") }}</th>
+                  <th>{{ $t("header.cart.price") }}</th>
+                  <th>{{ $t("header.cart.qty") }}</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
 
-              <router-link
-                :to="'/' + $i18n.locale + '/login'"
-                id="clear-cart"
-                class="button-clear-cart u-full-width"
-                >{{ $t("header.cart.buy") }}</router-link
-              >
-            </div>
-          </li>
-          <li>
-            <router-link :to="'/' + $i18n.locale + '/forum'"
-              ><i class="fa fa-user-plus"></i
-              >{{ $t("header.nav.forum") }}</router-link
+            <router-link
+              :to="'/' + $i18n.locale + '/login'"
+              id="clear-cart"
+              class="button-clear-cart u-full-width"
+              >{{ $t("header.cart.buy") }}</router-link
             >
-          </li>
-          <li>
-            <router-link :to="'/' + $i18n.locale + '/login'"
-              ><i class="fa fa-user"></i
-              >{{ $t("header.nav.login") }}</router-link
-            >
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+        <li>
+          <router-link :to="'/' + $i18n.locale + '/forum'"
+            ><i class="fa fa-user-plus"></i
+            >{{ $t("header.nav.forum") }}</router-link
+          >
+        </li>
+        <li>
+          <router-link :to="'/' + $i18n.locale + '/login'"
+            ><i class="fa fa-user"></i>{{ $t("header.nav.login") }}</router-link
+          >
+        </li>
+      </ul>
     </div>
   </div>
 </template>

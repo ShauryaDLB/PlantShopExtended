@@ -2,16 +2,19 @@
   <div id="app">
     <Header />
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "App",
   components: {
-    Header
+    Header,
+    Footer
   }
 };
 </script>
@@ -25,18 +28,18 @@ export default {
 
 :root {
   /* Colour Variables Telekom Brand Design */
-  --magenta: rgb(226, 0, 116);
-  --white: rgb(255, 255, 255);
-  --black: rgb(75, 75, 75);
-  --superlightgrey: rgb(238, 238, 238);
-  --lightgrey: rgb(164, 164, 164);
-  --darkgrey: rgb(108, 108, 108);
-  --darkblue: rgb(16, 99, 173);
-  --lightblue: rgb(83, 186, 242);
-  --cyan: rgb(27, 173, 162);
-  --green: rgb(191, 203, 68);
-  --yellow: rgb(255, 211, 41);
-  --orange: rgb(255, 154, 30);
+  --magenta: #e20074 !important;
+  --white: #ffffff !important;
+  --black: #4b4b4b !important;
+  --superlightgrey: #eeeeee !important;
+  --lightgrey: #a4a4a4 !important;
+  --darkgrey: #6c6c6c !important;
+  --darkblue: #1063ad !important;
+  --lightblue: #53baf2 !important;
+  --cyan: #1bada2 !important;
+  --green: #bfcb44 !important;
+  --yellow: #ffd329 !important;
+  --orange: #ff9a1e !important;
 }
 
 * {
