@@ -1,0 +1,9 @@
+{
+  "message": "hello i18n !!",
+  "header": {
+    "nav": {
+      "shop": "Shop",
+      "login": "Login"
+    }
+  }
+}
