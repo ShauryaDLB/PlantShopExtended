@@ -16,17 +16,19 @@
         <img src="@/assets/img/tw.png" alt="twitter-icon" />
       </div>
 
-      <form id="login-form" action="success.html">
+      <form id="login-form">
         <input type="text" placeholder="User-Name" required />
         <input type="password" placeholder="Passwort" required />
         <input type="checkbox" id="login-checkbox" /><label
           for="login-checkbox"
           >{{ $t("login.remember") }}</label
         >
-        <button type="submit">{{ $t("login.login") }}</button>
+        <button type="submit" @click.stop.prevent="submit()">
+          {{ $t("login.login") }}
+        </button>
       </form>
 
-      <form id="register-form" action="success.html">
+      <form id="register-form">
         <input type="text" placeholder="User-Name" required />
         <input type="text" placeholder="E-Mail" required />
         <input type="password" placeholder="Passwort" required />
@@ -34,7 +36,9 @@
           for="register-checkbox"
           >{{ $t("login.agree") }}</label
         >
-        <button type="submit">{{ $t("login.register") }}</button>
+        <button type="submit" @click.stop.prevent="submit()">
+          {{ $t("login.register") }}
+        </button>
       </form>
     </div>
   </section>
@@ -57,6 +61,9 @@ export default {
       document.getElementById("btn").style.left = "0";
       document.getElementById("login-btn").style.color = "var(--white)";
       document.getElementById("register-btn").style.color = "var(--darkgrey)";
+    },
+    submit: function() {
+      this.$router.push("/" + this.$i18n.locale + "/success");
     }
   }
 };

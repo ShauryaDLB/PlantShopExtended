@@ -8,8 +8,11 @@
       <hr />
       <p>Haben Sie Probleme? <a href="">Kontaktieren Sie uns</a></p>
       <p class="lead">
-        <a class="btn btn-primary" href="index.html" role="button"
-          >Zurück zur Startseite</a
+        <router-link
+          class="btn btn-primary"
+          :to="'/' + $i18n.locale"
+          role="button"
+          >Zurück zur Startseite</router-link
         >
       </p>
     </div>
