@@ -1,5 +1,5 @@
 <template>
-  <section id="hero">
+  <div class="login">
     <div class="form-box">
       <div class="button-box">
         <div id="btn"></div>
@@ -41,7 +41,7 @@
         </button>
       </form>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -70,7 +70,7 @@ export default {
 </script>
 
 <style scoped>
-#hero {
+.login {
   height: 100%;
   width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
@@ -79,7 +79,7 @@ export default {
   background-size: cover;
   position: absolute;
 }
-#hero .form-box {
+.login .form-box {
   width: 380px;
   height: 480px;
   position: relative;
@@ -89,14 +89,14 @@ export default {
   border-radius: 30px;
   overflow: hidden;
 }
-#hero .form-box .button-box {
+.login .form-box .button-box {
   width: 220px;
   margin: 35px auto;
   position: relative;
   box-shadow: 0 0 20px 9px var(--cyan);
   border-radius: 30px;
 }
-#hero .form-box .button-box #btn {
+.login .form-box .button-box #btn {
   position: absolute;
   top: 0;
   left: 0;
@@ -106,7 +106,7 @@ export default {
   border-radius: 30px;
   transition: 0.5s;
 }
-#hero .form-box .button-box button {
+.login .form-box .button-box button {
   padding: 10px 30px;
   cursor: pointer;
   background: transparent;
@@ -114,28 +114,28 @@ export default {
   outline: none;
   position: relative;
 }
-#hero .form-box .button-box #login-btn {
+.login .form-box .button-box #login-btn {
   color: var(--white);
 }
-#hero .form-box .button-box #register-btn {
+.login .form-box .button-box #register-btn {
   color: var(--darkgrey);
 }
-#hero .form-box .social-icons {
+.login .form-box .social-icons {
   margin: 30px auto;
   text-align: center;
 }
-#hero .form-box .social-icons img {
+.login .form-box .social-icons img {
   width: 30px;
   margin: 0 12px;
   cursor: pointer;
 }
-#hero .form-box form {
-  top: 180px;
+.login .form-box form {
   position: absolute;
+  top: 180px;
   width: 280px;
   transition: 0.5s;
 }
-#hero .form-box form input[type="text"],
+.login .form-box form input[type="text"],
 input[type="password"] {
   width: 100%;
   padding: 10px 0;
@@ -147,16 +147,16 @@ input[type="password"] {
   outline: none;
   background: transparent;
 }
-#hero .form-box form input[type="checkbox"] {
+.login .form-box form input[type="checkbox"] {
   margin: 30px 10px 30px 0px;
 }
-#hero .form-box form label {
+.login .form-box form label {
   color: var(--lightgrey);
   font-size: 12px;
   position: absolute;
   bottom: 65px;
 }
-#hero .form-box form button[type="submit"] {
+.login .form-box form button[type="submit"] {
   width: 85%;
   padding: 10px 30px;
   cursor: pointer;
@@ -168,20 +168,20 @@ input[type="password"] {
   outline: none;
   border-radius: 30px;
 }
-#hero .form-box form#login-form {
+.login .form-box form#login-form {
   left: 50px;
 }
-#hero .form-box form#register-form {
+.login .form-box form#register-form {
   left: 450px;
 }
 
 @media only screen and (max-width: 600px) {
-  #hero .form-box {
-    margin-top: 20%;
-    width: 340px;
+  .login .form-box {
+    margin-top: 30%;
+    width: 300px;
   }
-  #hero .form-box form {
-    width: 240px;
+  .login .form-box form {
+    width: 200px;
   }
 }
 </style>
