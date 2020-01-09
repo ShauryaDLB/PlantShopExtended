@@ -5,7 +5,7 @@
     <VideoModals />
     <CarouselSlider />
     <FeaturedCategories />
-    <OnSaleProducts />
+    <ShowcaseProducts :title="translateTitleBox" />
   </div>
 </template>
 
@@ -15,7 +15,7 @@ import Title from "@/components/Title.vue";
 import VideoModals from "@/components/VideoModals.vue";
 import CarouselSlider from "@/components/CarouselSlider.vue";
 import FeaturedCategories from "@/components/FeaturedCategories.vue";
-import OnSaleProducts from "@/components/OnSaleProducts.vue";
+import ShowcaseProducts from "@/components/ShowcaseProducts.vue";
 
 export default {
   components: {
@@ -24,7 +24,12 @@ export default {
     VideoModals,
     CarouselSlider,
     FeaturedCategories,
-    OnSaleProducts
+    ShowcaseProducts
+  },
+  computed: {
+    translateTitleBox: function() {
+      return this.$t("home.titleBox");
+    }
   }
 };
 </script>

@@ -1,11 +1,16 @@
 <template>
   <div class="title-box">
-    <h2>On Sale</h2>
+    <h2>{{ title }}</h2>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "TitleBox",
+  props: {
+    title: String
+  }
+};
 </script>
 
 <style scoped>

@@ -1,10 +1,12 @@
 <template>
-  <div class="col-md-3">
+  <div class="showcase-product">
     <div class="product-top">
-      <a href="product.html"><img :src="image"/></a>
+      <router-link :to="'/' + $i18n.locale + '/product' + '/' + id"
+        ><img :src="image"
+      /></router-link>
       <div class="overlay-right">
         <router-link
-          :to="'/' + $i18n.locale + '/product'"
+          :to="'/' + $i18n.locale + '/product' + '/' + id"
           class="btn btn-secondary"
           title="Quick Shop"
           ><i class="fa fa-eye"></i
@@ -31,8 +33,10 @@
 
 <script>
 export default {
-  name: "OnSaleProduct",
+  name: "ShowcaseProduct",
   props: {
+    product: Object,
+    id: Number,
     image: String,
     name: String,
     price: Number
