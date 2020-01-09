@@ -71,7 +71,6 @@ export default {
   margin-left: 5%;
   transition: 0.5s;
 }
-
 .product-bottom .fa {
   color: var(--cyan);
   font-size: 10px;

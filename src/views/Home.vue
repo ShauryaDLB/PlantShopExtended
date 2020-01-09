@@ -18,7 +18,6 @@ import FeaturedCategories from "@/components/FeaturedCategories.vue";
 import OnSaleProducts from "@/components/OnSaleProducts.vue";
 
 export default {
-  name: "home",
   components: {
     BreadCrump,
     Title,
