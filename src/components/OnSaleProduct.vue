@@ -3,9 +3,12 @@
     <div class="product-top">
       <a href="product.html"><img :src="image"/></a>
       <div class="overlay-right">
-        <a href="product.html" class="btn btn-secondary" title="Quick Shop"
+        <router-link
+          :to="'/' + $i18n.locale + '/product'"
+          class="btn btn-secondary"
+          title="Quick Shop"
           ><i class="fa fa-eye"></i
-        ></a>
+        ></router-link>
         <button type="button" class="btn btn-secondary" title="Add to Wishlist">
           <i class="fa fa-heart-o"></i>
         </button>
