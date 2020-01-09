@@ -63,7 +63,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 @media (max-height: 800px) {
   footer {
     position: static;

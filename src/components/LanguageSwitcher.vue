@@ -17,3 +17,5 @@ export default {
   name: "LanguageSwitcher"
 };
 </script>
+
+<style scoped></style>
