@@ -1,7 +1,7 @@
 <template>
   <section class="on-sale">
     <div class="container">
-      <TitleBox :title="title" />
+      <TitleBox :titleBox="titleBox" />
       <div class="row">
         <ShowcaseProduct
           v-for="(product, index) in products"
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-import products from "@/assets/products.json";
 import TitleBox from "@/components/TitleBox.vue";
 import ShowcaseProduct from "@/components/ShowcaseProduct.vue";
 
@@ -29,15 +28,8 @@ export default {
     ShowcaseProduct
   },
   props: {
-    title: String
-  },
-  data() {
-    return {
-      products: []
-    };
-  },
-  created: function() {
-    this.products = products;
+    titleBox: String,
+    products: Array
   }
 };
 </script>

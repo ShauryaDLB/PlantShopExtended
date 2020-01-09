@@ -1,6 +1,6 @@
 <template>
   <div class="title-box">
-    <h2>{{ title }}</h2>
+    <h2>{{ titleBox }}</h2>
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: "TitleBox",
   props: {
-    title: String
+    titleBox: String
   }
 };
 </script>

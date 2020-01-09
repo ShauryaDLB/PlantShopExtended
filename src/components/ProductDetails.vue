@@ -7,7 +7,7 @@
         </div>
         <div class="col-md-7">
           <p class="new-arrival text-center">New</p>
-          <h2 id="title-product">{{ name }}</h2>
+          <h2 id="title-product">{{ product.title }}</h2>
           <p>Bestell-Nr.: 72098</p>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
@@ -37,7 +37,7 @@ import SmallCarouselSlider from "@/components/SmallCarouselSlider.vue";
 export default {
   name: "ProductDetails",
   props: {
-    name: String
+    product: Object
   },
   components: {
     SmallCarouselSlider
