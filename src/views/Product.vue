@@ -1,13 +1,12 @@
 <template>
   <div class="product">
     <ProductDetails :product="product" />
-    <ProductDescription />
+    <ProductDescription :product="product" />
     <ShowcaseProducts :products="products" :titleBox="translateTitleBox" />
   </div>
 </template>
 
 <script>
-import products from "@/assets/products.json";
 import ProductDetails from "@/components/ProductDetails.vue";
 import ProductDescription from "@/components/ProductDescription.vue";
 import ShowcaseProducts from "@/components/ShowcaseProducts.vue";
@@ -98,7 +97,7 @@ export default {
   },
   methods: {
     updateProduct() {
-      this.product = products.find(
+      this.product = this.products.find(
         element => element.id == this.$route.params.id
       );
     }

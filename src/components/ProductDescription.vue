@@ -1,6 +1,5 @@
 <template>
   <div class="product-description">
-    <br />
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
       <li class="nav-item">
@@ -21,34 +20,18 @@
     <!-- Tab panes -->
     <div class="tab-content">
       <div id="description" class="container tab-pane active">
-        <br />
         <h3>Description</h3>
         <p>
-          Frisch aus Radebeul geschnitten als Strauß oder als Buquet. Lilien
-          sind ausdauernde, aufrecht wachsende Zwiebelpflanzen mit oft
-          auffälligen Blüten. Aufgrund ihres attraktiven Erscheinungsbilds
-          wurden und werden sie in vielen Kulturen als Zierpflanzen geschätzt.
-          Einige Arten zählen zu den ältesten Zierpflanzen überhaupt und fanden
-          auch Verwendung als religiöse Symbole. Erst im 20. Jahrhundert
-          erlangten sie jedoch industrielle Bedeutung als Zuchtpflanzen und
-          Schnittblumen. Insbesondere in Asien finden sie bis heute auch
-          Verwendung als Lebensmittel sowie als Heilpflanzen. Die Gattung ist –
-          ausgehend von ihrem evolutionären Ursprung im Himalaya – auf allen
-          Kontinenten der Nordhalbkugel zu finden, vorzugsweise in klimatisch
-          gemäßigten Zonen. Hauptverbreitungsgebiet ist China, Nebenzentren sind
-          Japan, Nordamerika sowie Europa und der Kaukasus. Mit den Lilien am
-          nächsten verwandt ist die Gattung der Schachbrettblumen.
+          {{ product.description }}
         </p>
       </div>
       <div id="reviews" class="container tab-pane fade">
-        <br />
         <h3>Reviews</h3>
         <p>
           No reviews yet.
         </p>
       </div>
       <div id="make-review" class="container tab-pane fade">
-        <br />
         <h3>Write A Review</h3>
         <form class="review-form">
           <div class="text-input">
@@ -109,13 +92,16 @@
 
 <script>
 export default {
-  name: "ProductDescription"
+  name: "ProductDescription",
+  props: {
+    product: Object
+  }
 };
 </script>
 
 <style scoped>
 .product-description {
-  width: 80%;
+  width: 60%;
   margin: 50px auto;
 }
 .product-description p {
