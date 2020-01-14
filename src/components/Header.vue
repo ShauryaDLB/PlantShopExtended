@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header top-nav-bar">
     <div class="search-box">
       <router-link :to="'/' + $i18n.locale">
         <img src="@/assets/img/logo_200x200.png" alt="Plant-Shop-Logo" class="logo" />
@@ -65,7 +65,7 @@ export default {
 </script>
 
 <style scoped>
-.header {
+.top-nav-bar {
   height: 57px;
   top: 0;
   position: sticky;
@@ -79,27 +79,27 @@ export default {
   width: 60%;
 }
 
-.header .search-box img.logo {
+.top-nav-bar .search-box img.logo {
   height: 42px;
   margin: 10px 50px;
 }
 
-.header .search-box a {
+.top-nav-bar .search-box a {
   text-decoration: none;
   width: 100%;
 }
 
-.header .header a.router-link-exact-active {
+.header .top-nav-bar a.router-link-exact-active {
   color: var(--orange);
 }
 
-.header .search-box h1 {
+.top-nav-bar .search-box h1 {
   color: var(--darkgrey);
   margin-top: 5px;
   font-size: 38px;
 }
 
-.header .search-box input.form-control {
+.top-nav-bar .search-box input.form-control {
   margin-top: 9px;
   margin-left: 30px;
   border: 1px solid var(--superlightgrey);
@@ -108,12 +108,11 @@ export default {
   box-shadow: none !important;
 }
 
-.header .search-box input.form-control:focus {
-  border-color: var(--superlightgrey);
-  background-color: var(--superlightgrey);
+.top-nav-bar .search-box input.form-control:focus {
+  background-color: var(--white);
 }
 
-.header .search-box span.input-group-text {
+.top-nav-bar .search-box span.input-group-text {
   background: var(--superlightgrey) !important;
   border: 1px solid var(--superlightgrey) !important;
   margin: 8.5px 10px 3px 0 !important;
@@ -122,7 +121,7 @@ export default {
   height: 38px;
 }
 
-.header .search-box span.input-group-text i.fa-search {
+.top-nav-bar .search-box span.input-group-text i.fa-search {
   color: var(--lightgrey);
 }
 
@@ -250,14 +249,14 @@ td:last-child {
 }
 
 @media only screen and (max-width: 1030px) {
-  .header {
+  .top-nav-bar {
     height: 118px;
     border-bottom: 0;
   }
   .search-box {
     width: 100%;
   }
-  .header .search-box h1 {
+  .top-nav-bar .search-box h1 {
     font-size: 32px;
   }
   .menu-bar {

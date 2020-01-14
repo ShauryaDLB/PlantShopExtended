@@ -1,12 +1,7 @@
 <template>
   <!-- Video Modals -->
-  <div class="row">
-    <VideoModal
-      v-for="(image, index) in images"
-      :key="index"
-      :image="image"
-      :index="index"
-    />
+  <div class="row video-modals">
+    <VideoModal v-for="(image, index) in images" :key="index" :image="image" :index="index" />
   </div>
 </template>
 
@@ -44,4 +39,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.video-modals {
+  margin-right: 50px;
+  margin-left: 50px;
+}
+</style>
