@@ -3,12 +3,8 @@
     <div class="form-box">
       <div class="button-box">
         <div id="btn"></div>
-        <button id="login-btn" @click="login()">
-          {{ $t("login.login") }}
-        </button>
-        <button id="register-btn" @click="register()">
-          {{ $t("login.register") }}
-        </button>
+        <button id="login-btn" @click="login()">{{ $t("login.login") }}</button>
+        <button id="register-btn" @click="register()">{{ $t("login.register") }}</button>
       </div>
       <div class="social-icons">
         <img src="@/assets/img/fb.png" alt="facebook-icon" />
@@ -19,26 +15,18 @@
       <form id="login-form">
         <input type="text" placeholder="User-Name" required />
         <input type="password" placeholder="Passwort" required />
-        <input type="checkbox" id="login-checkbox" /><label
-          for="login-checkbox"
-          >{{ $t("login.remember") }}</label
-        >
-        <button type="submit" @click.stop.prevent="submit()">
-          {{ $t("login.login") }}
-        </button>
+        <input type="checkbox" id="login-checkbox" />
+        <label for="login-checkbox">{{ $t("login.remember") }}</label>
+        <button type="submit" @click.stop.prevent="submit()">{{ $t("login.login") }}</button>
       </form>
 
       <form id="register-form">
         <input type="text" placeholder="User-Name" required />
         <input type="text" placeholder="E-Mail" required />
         <input type="password" placeholder="Passwort" required />
-        <input type="checkbox" id="register-checkbox" /><label
-          for="register-checkbox"
-          >{{ $t("login.agree") }}</label
-        >
-        <button type="submit" @click.stop.prevent="submit()">
-          {{ $t("login.register") }}
-        </button>
+        <input type="checkbox" id="register-checkbox" />
+        <label for="register-checkbox">{{ $t("login.agree") }}</label>
+        <button type="submit" @click.stop.prevent="submit()">{{ $t("login.register") }}</button>
       </form>
     </div>
   </div>
@@ -48,21 +36,21 @@
 export default {
   name: "Login",
   methods: {
-    register: function() {
+    register() {
       document.getElementById("login-form").style.left = "-400px";
       document.getElementById("register-form").style.left = "50px";
       document.getElementById("btn").style.left = "110px";
       document.getElementById("login-btn").style.color = "var(--darkgrey)";
       document.getElementById("register-btn").style.color = "var(--white)";
     },
-    login: function() {
+    login() {
       document.getElementById("login-form").style.left = "50px";
       document.getElementById("register-form").style.left = "450px";
       document.getElementById("btn").style.left = "0";
       document.getElementById("login-btn").style.color = "var(--white)";
       document.getElementById("register-btn").style.color = "var(--darkgrey)";
     },
-    submit: function() {
+    submit() {
       this.$router.push("/" + this.$i18n.locale + "/success");
     }
   }

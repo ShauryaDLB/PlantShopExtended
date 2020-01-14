@@ -17,10 +17,7 @@
           <!--Body-->
           <div class="modal-body mb-0 p-0">
             <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <div
-                class="embed-responsive-item"
-                :id="'video' + (index + 1)"
-              ></div>
+              <div class="embed-responsive-item" :id="'video' + (index + 1)"></div>
             </div>
           </div>
 
@@ -46,9 +43,7 @@
               type="button"
               class="btn btn-outline-primary btn-rounded btn-md ml-4"
               data-dismiss="modal"
-            >
-              Close
-            </button>
+            >Close</button>
           </div>
         </div>
         <!--/.Content-->
@@ -76,7 +71,7 @@ export default {
     image: String
   },
   computed: {
-    index: function() {
+    index() {
       return this.$vnode.key;
     }
   }

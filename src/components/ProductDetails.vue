@@ -15,16 +15,15 @@
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <p class="price">€ 40,00</p>
-          <p><b>Verfügbarkeit:</b>verfügbar</p>
-          <p><b>Zustand:</b>neu</p>
+          <p>
+            <b>Verfügbarkeit:</b>verfügbar
+          </p>
+          <p>
+            <b>Zustand:</b>neu
+          </p>
           <label for="productQuantity">Quantity:</label>
-          <input id="productQuantity" type="number" v-model="qty" />
-          <button
-            class="btn btn-primary"
-            @click="$emit('add-product', product, qty)"
-          >
-            Add to Cart
-          </button>
+          <input id="productQuantity" type="number" min="1" max="99" v-model="qty" />
+          <button class="btn btn-primary" @click="addProduct">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -45,6 +44,30 @@ export default {
   },
   components: {
     SmallCarouselSlider
+  },
+  computed: {
+    qtyNumber() {
+      return Number(this.qty);
+    }
+  },
+  methods: {
+    addProduct() {
+      if (
+        !this.$store.state.cartProducts.some(
+          element => element.id === this.product.id
+        )
+      ) {
+        this.$store.commit("add", {
+          ...this.product,
+          qty: this.qtyNumber
+        });
+      } else {
+        this.$store.commit("changeQty", {
+          id: this.product.id,
+          qty: this.qtyNumber
+        });
+      }
+    }
   }
 };
 </script>
@@ -79,7 +102,7 @@ p {
   font-weight: bold;
   height: 33px;
   text-align: center;
-  width: 30px;
+  width: 40px;
 }
 .product-detail .single-product button.btn-primary {
   background: var(--cyan) !important;
