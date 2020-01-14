@@ -10,28 +10,40 @@ export default new Vuex.Store({
         id: 1,
         image: require("@/assets/img/flowers4.jpg"),
         title: "Rosen aus Hellerau",
-        price: 20.0,
-        description: "tolle Rosen",
+        price: 19.9,
+        description:
+          "Die Rosen (Rosa) sind die namensgebende Pflanzengattung der Familie der Rosengewächse (Rosaceae). Die Gattung umfasst je nach Auffassung des Autors .",
         rating: 3.0,
         reviews: [
           {
             author: "Marco",
-            review: "super",
+            review: "super, meine Frau hat sich gefreut",
             rating: 4.5
+          },
+          {
+            author: "Peter L.",
+            review: "bin kein Blumen Fan",
+            rating: 1.5
           }
         ]
       },
       {
         id: 2,
         image: require("@/assets/img/flowers10.jpg"),
-        title: "Tulpen aus Neustadt",
-        price: 40.0,
-        description: "tolle Tulpen",
+        title: "Tulpen aus der Neustadt",
+        price: 14.99,
+        description:
+          "Die Tulpen bilden eine Pflanzengattung in der Familie der Liliengewächse. Die etwa 150 Arten sind in Nordafrika und über Europa bis Zentralasien verbreitet.",
         rating: 4.5,
         reviews: [
           {
-            author: "Marco",
-            review: "super",
+            author: "Rayk",
+            review: "Nicht so toll, blöde Farbe",
+            rating: 2.5
+          },
+          {
+            author: "Peter G.",
+            review: "Schönes Geschenk",
             rating: 2.5
           }
         ]
@@ -40,14 +52,20 @@ export default new Vuex.Store({
         id: 3,
         image: require("@/assets/img/flowers8.jpg"),
         title: "Nelken aus Radebeul",
-        price: 35.99,
-        description: "klasse Nelken",
+        price: 12.0,
+        description:
+          "Die Nelken (Dianthus) bilden eine Pflanzengattung in der Familie der Nelkengewächse (Caryophyllaceae). Die 320 bis 600 Arten kommen in den gemäßigten Zonen vor.",
         rating: 4.0,
         reviews: [
           {
-            author: "Marco",
-            review: "super",
+            author: "Romy",
+            review: "Sehen toll auf dem Balkon aus.",
             rating: 4.5
+          },
+          {
+            author: "Rober",
+            review: "hässlich",
+            rating: 0.5
           }
         ]
       },
@@ -55,13 +73,14 @@ export default new Vuex.Store({
         id: 4,
         image: require("@/assets/img/flowers9.jpg"),
         title: "Margeriten aus Striesen",
-        price: 19.5,
-        description: "tolle margis",
+        price: 4.5,
+        description:
+          "Die Margeriten sind eine Pflanzengattung in der Familie der Korbblütler. Die Gattung umfasst derzeit 42 Arten. Der botanische Name leitet sich von altgriechisch λευκός leukós ‚weiß‘ und ἄνθος ánthos ‚Blüte, Blume‘ ab.",
         rating: 5.0,
         reviews: [
           {
-            author: "Marco",
-            review: "super",
+            author: "Lena",
+            review: "Schön für eine Hochzeit.",
             rating: 4.5
           }
         ]
