@@ -2,7 +2,11 @@
   <div class="header top-nav-bar">
     <div class="search-box">
       <router-link :to="'/' + $i18n.locale">
-        <img src="@/assets/img/logo_200x200.png" alt="Plant-Shop-Logo" class="logo" />
+        <img
+          src="@/assets/img/logo_200x200.png"
+          alt="Plant-Shop-Logo"
+          class="logo"
+        />
       </router-link>
 
       <router-link :to="'/' + $i18n.locale">
@@ -31,14 +35,33 @@
                   <th></th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody v-for="(cartProduct, index) in cartProducts" :key="index">
+                <tr>
+                  <td>
+                    <img
+                      :src="cartProduct.image"
+                      :alt="cartProduct.title"
+                      width="50"
+                    />
+                  </td>
+                  <td>{{ cartProduct.title }}</td>
+                  <td>{{ cartProduct.price }}</td>
+                  <td class="product-${cartProduct.id}">
+                    {{ cartProduct.qty }}
+                  </td>
+                  <td>
+                    <a href="#" class="remove" :data-id="cartProduct.id">X</a>
+                  </td>
+                </tr>
+              </tbody>
             </table>
 
             <router-link
               :to="'/' + $i18n.locale + '/login'"
               id="clear-cart"
               class="button-clear-cart u-full-width"
-            >{{ $t("header.cart.buy") }}</router-link>
+              >{{ $t("header.cart.buy") }}</router-link
+            >
           </div>
         </li>
         <li>
@@ -60,7 +83,16 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data: function() {
+    return {
+      cartProducts: []
+    };
+  },
+  created: function() {
+    this.cartProducts =
+      JSON.parse(window.localStorage.getItem("products")) || new Array();
+  }
 };
 </script>
 

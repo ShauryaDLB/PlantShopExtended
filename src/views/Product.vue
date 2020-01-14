@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <ProductDetails :product="product" />
+    <ProductDetails @add-product="addProduct" :product="product" />
     <ProductDescription :product="product" />
     <ShowcaseProducts :products="products" :titleBox="translateTitleBox" />
   </div>
@@ -90,8 +90,11 @@ export default {
     }
   },
   created() {
+    this.cartProducts =
+      JSON.parse(window.localStorage.getItem("products")) || new Array();
     this.updateProduct();
   },
+
   watch: {
     $route: "updateProduct"
   },
@@ -99,6 +102,32 @@ export default {
     updateProduct() {
       this.product = this.products.find(
         element => element.id == this.$route.params.id
+      );
+    },
+    addProduct(newProduct, qty) {
+      let foundIndex,
+        product = null;
+      if (
+        (foundIndex = this.cartProducts.findIndex(
+          product => product.id == newProduct.id
+        )) !== -1
+      ) {
+        this.cartProducts[foundIndex].qty =
+          Number(this.cartProducts[foundIndex].qty) + Number(qty);
+      } else {
+        product = {
+          image: newProduct.image,
+          title: newProduct.title,
+          price: newProduct.price,
+          qty: Number(qty),
+          id: newProduct.id
+        };
+        this.cartProducts.push(product);
+      }
+
+      window.localStorage.setItem(
+        "products",
+        JSON.stringify(this.cartProducts)
       );
     }
   }

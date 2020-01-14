@@ -2,6 +2,7 @@
   <div class="home">
     <BreadCrump />
     <Title />
+    {{ count }}
     <VideoModals />
     <CarouselSlider />
     <FeaturedCategories />

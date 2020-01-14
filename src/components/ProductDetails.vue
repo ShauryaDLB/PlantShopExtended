@@ -15,14 +15,13 @@
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <p class="price">€ 40,00</p>
-          <p><b>Verfügbarkeit: </b>verfügbar</p>
-          <p><b>Zustand: </b>neu</p>
-          <label for="productQuantity">Quantity: </label>
-          <input id="productQuantity" type="text" value="1" />
+          <p><b>Verfügbarkeit:</b>verfügbar</p>
+          <p><b>Zustand:</b>neu</p>
+          <label for="productQuantity">Quantity:</label>
+          <input id="productQuantity" type="number" v-model="qty" />
           <button
-            class="btn btn-primary add-to-cart"
-            id="add-to-cart"
-            data-id="1"
+            class="btn btn-primary"
+            @click="$emit('add-product', product, qty)"
           >
             Add to Cart
           </button>
@@ -36,6 +35,11 @@
 import SmallCarouselSlider from "@/components/SmallCarouselSlider.vue";
 export default {
   name: "ProductDetails",
+  data() {
+    return {
+      qty: 1
+    };
+  },
   props: {
     product: Object
   },
@@ -70,7 +74,7 @@ p {
   font: 30px bold;
   padding-top: 20px;
 }
-.product-detail .single-product input[type="text"] {
+.product-detail .single-product input[type="number"] {
   border: 1px solid var(--lightgrey);
   font-weight: bold;
   height: 33px;

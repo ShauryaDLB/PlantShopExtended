@@ -1,7 +1,12 @@
 <template>
   <!-- Video Modals -->
   <div class="row video-modals">
-    <VideoModal v-for="(image, index) in images" :key="index" :image="image" :index="index" />
+    <VideoModal
+      v-for="(image, index) in images"
+      :key="index"
+      :image="image"
+      :index="index"
+    />
   </div>
 </template>
 
