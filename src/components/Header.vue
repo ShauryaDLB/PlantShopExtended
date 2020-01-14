@@ -1,27 +1,25 @@
 <template>
-  <div class="header top-nav-bar">
+  <div class="header">
     <div class="search-box">
       <router-link :to="'/' + $i18n.locale">
-        <img
-          src="@/assets/img/logo_200x200.png"
-          alt="Plant-Shop-Logo"
-          class="logo"
-        />
+        <img src="@/assets/img/logo_200x200.png" alt="Plant-Shop-Logo" class="logo" />
       </router-link>
 
-      <router-link :to="'/' + $i18n.locale"
-        ><h1>{{ $t("title") }}</h1></router-link
-      >
+      <router-link :to="'/' + $i18n.locale">
+        <h1>{{ $t("title") }}</h1>
+      </router-link>
       <input type="text" class="form-control" />
-      <span class="input-group-text"><i class="fa fa-search"></i></span>
+      <span class="input-group-text">
+        <i class="fa fa-search"></i>
+      </span>
     </div>
     <div class="menu-bar">
       <ul>
         <li class="submenu">
-          <router-link :to="'/' + $i18n.locale + '/login'"
-            ><i class="fa fa-shopping-cart"></i
-            >{{ $t("header.cart.title") }}(0)</router-link
-          >
+          <router-link :to="'/' + $i18n.locale + '/login'">
+            <i class="fa fa-shopping-cart"></i>
+            {{ $t("header.cart.title") }}(0)
+          </router-link>
           <div id="shopping-cart">
             <table id="cart-content" class="u-full-width">
               <thead>
@@ -40,20 +38,20 @@
               :to="'/' + $i18n.locale + '/login'"
               id="clear-cart"
               class="button-clear-cart u-full-width"
-              >{{ $t("header.cart.buy") }}</router-link
-            >
+            >{{ $t("header.cart.buy") }}</router-link>
           </div>
         </li>
         <li>
-          <router-link :to="'/' + $i18n.locale + '/forum'"
-            ><i class="fa fa-user-plus"></i
-            >{{ $t("header.nav.forum") }}</router-link
-          >
+          <router-link :to="'/' + $i18n.locale + '/forum'">
+            <i class="fa fa-user-plus"></i>
+            {{ $t("header.nav.forum") }}
+          </router-link>
         </li>
         <li>
-          <router-link :to="'/' + $i18n.locale + '/login'"
-            ><i class="fa fa-user"></i>{{ $t("header.nav.login") }}</router-link
-          >
+          <router-link :to="'/' + $i18n.locale + '/login'">
+            <i class="fa fa-user"></i>
+            {{ $t("header.nav.login") }}
+          </router-link>
         </li>
       </ul>
     </div>
@@ -67,7 +65,7 @@ export default {
 </script>
 
 <style scoped>
-.top-nav-bar {
+.header {
   height: 57px;
   top: 0;
   position: sticky;
@@ -81,27 +79,27 @@ export default {
   width: 60%;
 }
 
-.top-nav-bar .search-box img.logo {
+.header .search-box img.logo {
   height: 42px;
   margin: 10px 50px;
 }
 
-.top-nav-bar .search-box a {
+.header .search-box a {
   text-decoration: none;
   width: 100%;
 }
 
-.header .top-nav-bar a.router-link-exact-active {
+.header .header a.router-link-exact-active {
   color: var(--orange);
 }
 
-.top-nav-bar .search-box h1 {
+.header .search-box h1 {
   color: var(--darkgrey);
   margin-top: 5px;
   font-size: 38px;
 }
 
-.top-nav-bar .search-box input.form-control {
+.header .search-box input.form-control {
   margin-top: 9px;
   margin-left: 30px;
   border: 1px solid var(--superlightgrey);
@@ -110,12 +108,12 @@ export default {
   box-shadow: none !important;
 }
 
-.top-nav-bar .search-box input.form-control:focus {
+.header .search-box input.form-control:focus {
   border-color: var(--superlightgrey);
   background-color: var(--superlightgrey);
 }
 
-.top-nav-bar .search-box span.input-group-text {
+.header .search-box span.input-group-text {
   background: var(--superlightgrey) !important;
   border: 1px solid var(--superlightgrey) !important;
   margin: 8.5px 10px 3px 0 !important;
@@ -124,7 +122,7 @@ export default {
   height: 38px;
 }
 
-.top-nav-bar .search-box span.input-group-text i.fa-search {
+.header .search-box span.input-group-text i.fa-search {
   color: var(--lightgrey);
 }
 
@@ -252,14 +250,14 @@ td:last-child {
 }
 
 @media only screen and (max-width: 1030px) {
-  .top-nav-bar {
+  .header {
     height: 118px;
     border-bottom: 0;
   }
   .search-box {
     width: 100%;
   }
-  .top-nav-bar .search-box h1 {
+  .header .search-box h1 {
     font-size: 32px;
   }
   .menu-bar {
