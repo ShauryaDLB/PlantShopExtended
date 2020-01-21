@@ -1,50 +1,59 @@
 <template>
   <div class="forum">
-    <!-- bootstrap grid test -->
+    <button class="btn btn-primary">Add new Post</button>
     <div class="container">
       <div class="row header-row">
         <div class="col-1"></div>
-        <div class="col-4">Titel</div>
+        <div class="col-3">Titel</div>
+        <div class="col-2">Autor</div>
         <div class="col-2">Ansichten</div>
         <div class="col-2">Antworten</div>
-        <div class="col-3">Letzter Beitrag</div>
+        <div class="col-2">Letzter Beitrag</div>
       </div>
 
-      <div class="row">
-        <div class="col-1"><i class="fa fa-envelope"></i></div>
-        <div class="col-4">Lilien aus Hellerau</div>
-        <div class="col-2">8</div>
-        <div class="col-2">1</div>
-        <div class="col-3">
-          <div>Arvid Strauß</div>
-          <div>vor 40 Minuten</div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-1"><i class="fa fa-envelope"></i></div>
-        <div class="col-4">Rosen aus Pieschen</div>
-        <div class="col-2">48</div>
-        <div class="col-2">11</div>
-        <div class="col-3">
-          <div>Marco Krause</div>
-          <div>vor 6 Minuten</div>
-        </div>
-      </div>
+      <ForumPost v-for="(post, index) in posts" :key="index" :post="post" />
     </div>
   </div>
 </template>
 
+<script>
+import { mapState } from "vuex";
+import ForumPost from "@/components/ForumPost.vue";
+
+export default {
+  name: "Forum",
+  components: {
+    ForumPost
+  },
+  computed: {
+    ...mapState({
+      posts: state => state.posts
+    })
+  }
+};
+</script>
+
 <style scoped>
-div[class*="col"] {
-  background: var(--superlightgrey);
-  margin: 5px 0;
-  color: var(--darkgrey);
-  font-size: 1.2em;
+.forum {
+  min-height: 55vh;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+button {
+  background-color: var(--magenta);
+  border-color: var(--magenta);
+}
+button:hover {
+  background-color: var(--darkgrey);
+  border-color: var(--darkgrey);
 }
 
 .header-row div {
   color: var(--cyan) !important;
   font-weight: bold;
+  background: var(--superlightgrey);
+  margin: 5px 0;
+  color: var(--darkgrey);
+  font-size: 1.2em;
 }
 </style>

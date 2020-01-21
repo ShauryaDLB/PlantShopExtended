@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Product from "../views/Product.vue";
 import Login from "../views/Login.vue";
 import Forum from "../views/Forum.vue";
+import ForumPostContent from "../views/ForumPostContent.vue";
 import Success from "../views/Success.vue";
 import i18n from "@/i18n";
 
@@ -41,6 +42,11 @@ const routes = [
         path: "forum",
         name: "forum",
         component: Forum
+      },
+      {
+        path: "forum/post/:id",
+        name: "forumPostContent",
+        component: ForumPostContent
       },
       {
         path: "success",

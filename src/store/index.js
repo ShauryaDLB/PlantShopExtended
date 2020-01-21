@@ -86,7 +86,105 @@ export default new Vuex.Store({
         ]
       }
     ],
-    cartProducts: []
+    cartProducts: [],
+    posts: [
+      {
+        id: 1,
+        unreadPost: false,
+        title: "Was kosten rote Rosen",
+        author: "Arvid",
+        created: "20.01.2020",
+        viewCount: 56,
+        replyCount: 3,
+        lastUpdate: "just now",
+        lastUpdateBy: "Marco",
+        content: "Schön hier in der MMS",
+        replies: [
+          {
+            author: "Marco Krause",
+            content: "Gut oder?",
+            date: "4 hours ago"
+          },
+          {
+            author: "Peter Lohse",
+            content: "Joo",
+            date: "5 mins ago"
+          }
+        ]
+      },
+      {
+        id: 2,
+        unreadPost: true,
+        title: "Wo gibt es frische Nelken",
+        author: "Romy",
+        created: "20.01.2020",
+        viewCount: 80,
+        replyCount: 10,
+        lastUpdate: "40 mins ago",
+        lastUpdateBy: "Robert",
+        content: "Schön hier in der MMS",
+        replies: [
+          {
+            author: "Marco Krause",
+            content: "Gut oder?",
+            date: "4 hours ago"
+          },
+          {
+            author: "Peter Lohse",
+            content: "Joo",
+            date: "5 mins ago"
+          }
+        ]
+      },
+      {
+        id: 3,
+        unreadPost: true,
+        title: "Wann blühen Margeriten",
+        author: "Rayk",
+        created: "20.01.2020",
+        viewCount: 200,
+        replyCount: 34,
+        lastUpdate: "2 days ago",
+        lastUpdateBy: "Lena",
+        content: "Schön hier in der MMS",
+        replies: [
+          {
+            author: "Marco Krause",
+            content: "Gut oder?",
+            date: "4 hours ago"
+          },
+          {
+            author: "Peter Lohse",
+            content: "Joo",
+            date: "5 mins ago"
+          }
+        ]
+      },
+      {
+        id: 4,
+        unreadPost: false,
+        title: "Wie oft gießt man Tulpen",
+        author: "Peter G.",
+        created: "20.01.2020",
+        viewCount: 5,
+        replyCount: 2,
+        lastUpdate: "2 mins ago",
+        lastUpdateBy: "Peter L.",
+        content: "Schön hier in der MMS",
+        replies: [
+          {
+            author: "Marco Krause",
+            content: "Gut oder?",
+            date: "4 hours ago"
+          },
+          {
+            author: "Peter Lohse",
+            content: "Joo",
+            date: "5 mins ago"
+          }
+        ]
+      }
+    ]
   },
   mutations: {
     add(state, newProduct) {
