@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import axios from "axios";
 
 Vue.use(Vuex);
 
@@ -194,7 +195,8 @@ export default new Vuex.Store({
           }
         ]
       }
-    ]
+    ],
+    subscribers: []
   },
   mutations: {
     add(state, newProduct) {
@@ -207,8 +209,20 @@ export default new Vuex.Store({
     remove(state, id) {
       const index = state.cartProducts.findIndex(e => e.id === id);
       state.cartProducts.splice(index, 1);
+    },
+    SET_SUBSCRIBERS(state, subscribers) {
+      state.subscribers = subscribers;
     }
   },
-  actions: {},
+  actions: {
+    loadSubscribers({ commit }) {
+      axios
+        .get("http://localhost:3000/subscribers")
+        .then(res => res.data)
+        .then(subscribers => {
+          commit("SET_SUBSCRIBERS", subscribers);
+        });
+    }
+  },
   modules: {}
 });

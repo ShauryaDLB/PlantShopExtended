@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <BreadCrump />
-    <div style="color: red;font-size:40px;">{{ info[2].name }}</div>
     <Title />
     <VideoModals />
     <CarouselSlider />
@@ -12,7 +11,6 @@
 
 <script>
 import { mapState } from "vuex";
-import axios from "axios";
 import BreadCrump from "@/components/BreadCrump.vue";
 import Title from "@/components/Title.vue";
 import VideoModals from "@/components/VideoModals.vue";
@@ -36,9 +34,7 @@ export default {
     ShowcaseProducts
   },
   mounted() {
-    axios
-      .get("http://localhost:3000/subscribers")
-      .then(response => (this.info = response.data));
+    this.$store.dispatch("loadSubscribers");
   },
   computed: {
     ...mapState({

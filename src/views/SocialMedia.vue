@@ -4,19 +4,21 @@
       <div class="col-4">
         <img height="100" :src="post.image" :alt="post.author + '-Foto'" />
       </div>
-      <div class="col-6">
+      <div class="col-8">
         <div class="author-created">
           <span class="author">{{ post.author }}</span>
-          - {{ post.created }}
+          -
+          <span class="created">{{ post.created }}</span>
         </div>
         <div class="content">{{ post.content }}</div>
+        <SocialMediaFooter />
         <div class="row">
-          <div class="col-3 reactions">
-            <i class="fas fa-thumbs-up"></i> Like
+          <div class="col-4 reactions">
+            <i class="fa fa-thumbs-up"></i> Like
           </div>
-          <div class="col-3 reactions">Share</div>
-          <div class="col-3 reactions">Reply</div>
-          <div class="col-3 reactions">More...</div>
+
+          <div class="col-4 reactions">Reply</div>
+          <div class="col-4 reactions">More...</div>
         </div>
       </div>
     </div>
@@ -25,10 +27,13 @@
 
 <script>
 import { mapState } from "vuex";
+import SocialMediaFooter from "@/components/SocialMediaFooter.vue";
 
 export default {
   name: "SocialMedia",
-  components: {},
+  components: {
+    SocialMediaFooter
+  },
   computed: {
     ...mapState({
       posts: state => state.posts
@@ -40,7 +45,8 @@ export default {
 <style scoped>
 .social-media {
   margin-top: 50px;
-  min-height: 55vh;
+  color: var(--black);
+  font-size: 1.2em;
 }
 .post {
   margin-top: 30px;
@@ -51,16 +57,28 @@ img {
 .author-created {
   text-align: left;
 }
-.author-created .author {
+.author {
   font-weight: bold;
-  color: var(--orange);
+  color: var(--blue);
+}
+.created {
+  font-weight: italic;
+  color: var(--darkgrey);
 }
 .content {
+  padding: 10px;
   text-align: left;
-  border: solid 1px var(--superlightgrey);
+
+  background-color: var(--superlightgrey);
+  border-radius: 10px;
+  margin: 10px 0 10px 0;
+}
+.modal-footer {
+  color: var(--blue);
+  border: none;
 }
 .reactions {
-  color: var(--orange);
+  color: var(--blue);
   font-weight: bold;
 }
 </style>
