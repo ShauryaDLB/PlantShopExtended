@@ -93,46 +93,52 @@ export default new Vuex.Store({
         unreadPost: false,
         title: "Was kosten rote Rosen",
         author: "Arvid",
+        image: require("@/assets/img/arvid.jpg"),
         created: "20.01.2020",
         viewCount: 56,
         replyCount: 3,
-        lastUpdate: "just now",
+        lastUpdate: "gerade eben",
         lastUpdateBy: "Marco",
-        content: "Schön hier in der MMS",
+        content:
+          "Hallo PlantShop, ich würde mich gerne erkundigen, wieviel ich in etwa für rote Rosen ausgeben muss? Mein Budget ist maximal 100 €.",
         replies: [
           {
             author: "Marco Krause",
-            content: "Gut oder?",
-            date: "4 hours ago"
+            content:
+              "Hallo Arvid, meistens kosten Rosen 20 - 40 Euro, aber für seltene Exemplare kann man auch mal gut und gerne über 100 Euro auf den Tisch legen.",
+            date: "vor 3 Stunden"
           },
           {
             author: "Peter Lohse",
-            content: "Joo",
-            date: "5 mins ago"
+            content:
+              "Ich habe letztens im Karstadt welche für 15,- € bekommen.",
+            date: "vor 5 Minuten"
           }
         ]
       },
       {
         id: 2,
         unreadPost: true,
-        title: "Wo gibt es frische Nelken",
+        title: "frische Nelken",
         author: "Romy",
-        created: "20.01.2020",
+        image: require("@/assets/img/romy.jpg"),
+        created: "05.01.2020",
         viewCount: 80,
         replyCount: 10,
-        lastUpdate: "40 mins ago",
+        lastUpdate: "vor 40 Minuten",
         lastUpdateBy: "Robert",
-        content: "Schön hier in der MMS",
+        content:
+          "Wo gibt es frische Nelken hier in Dresden. Ich möchte welche für meine Großmutter kaufen.",
         replies: [
           {
-            author: "Marco Krause",
-            content: "Gut oder?",
-            date: "4 hours ago"
+            author: "Peter L.",
+            content: "Meistens an der Elbe oder in Gärten",
+            date: "vor 9 Stunden"
           },
           {
-            author: "Peter Lohse",
-            content: "Joo",
-            date: "5 mins ago"
+            author: "Peter L.",
+            content: "Oder du schaust mal bei Eby Kleinanzeigen",
+            date: "vor 7 Minuten"
           }
         ]
       },
@@ -140,23 +146,25 @@ export default new Vuex.Store({
         id: 3,
         unreadPost: true,
         title: "Wann blühen Margeriten",
-        author: "Rayk",
-        created: "20.01.2020",
+        author: "Marco",
+        image: require("@/assets/img/marco.jpg"),
+        created: "13.01.2020",
         viewCount: 200,
         replyCount: 34,
-        lastUpdate: "2 days ago",
+        lastUpdate: "vor 2 Tagen",
         lastUpdateBy: "Lena",
-        content: "Schön hier in der MMS",
+        content:
+          "Wann blühen Margeriten den am schönsten. Ich habe gehört im Frühling??",
         replies: [
           {
-            author: "Marco Krause",
-            content: "Gut oder?",
-            date: "4 hours ago"
+            author: "Rayk",
+            content: "Winter",
+            date: "vor 4 Stundne"
           },
           {
-            author: "Peter Lohse",
-            content: "Joo",
-            date: "5 mins ago"
+            author: "Rayk",
+            content: "Ne Herbst",
+            date: "gerade eben"
           }
         ]
       },
@@ -164,23 +172,25 @@ export default new Vuex.Store({
         id: 4,
         unreadPost: false,
         title: "Wie oft gießt man Tulpen",
-        author: "Peter G.",
+        author: "Lena",
+        image: require("@/assets/img/lena.jpg"),
         created: "20.01.2020",
         viewCount: 5,
         replyCount: 2,
-        lastUpdate: "2 mins ago",
+        lastUpdate: "vor 2 Minuten",
         lastUpdateBy: "Peter L.",
-        content: "Schön hier in der MMS",
+        content:
+          "Hallo liebe Community, ich bin mir nicht sicher wie oft ich meine Tulpen gießen muss. Wäre sehr dankbar für HIlfe.",
         replies: [
           {
             author: "Marco Krause",
-            content: "Gut oder?",
-            date: "4 hours ago"
+            content: "Einmal pro Woche reicht?",
+            date: "vor 4 Stunden"
           },
           {
             author: "Peter Lohse",
-            content: "Joo",
-            date: "5 mins ago"
+            content: "@Marco: Bist du verrückt? Mindestens 3 mal die Woche.",
+            date: "vor 5 Minuten"
           }
         ]
       }

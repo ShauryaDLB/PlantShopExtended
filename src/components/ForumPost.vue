@@ -6,7 +6,10 @@
     </div>
 
     <div class="col-3">
-      <router-link :to="'/' + $i18n.locale + '/forum' + '/post' + '/' + post.id">{{post.title}}</router-link>
+      <router-link
+        :to="'/' + $i18n.locale + '/forum' + '/post' + '/' + post.id"
+        >{{ post.title }}</router-link
+      >
     </div>
     <div class="col-2">{{ post.author }}</div>
     <div class="col-2">{{ post.viewCount }}</div>
@@ -29,17 +32,18 @@ export default {
 
 <style scoped>
 div[class*="col"] {
-  background: var(--superlightgrey);
+  background: var(--white);
   margin: 5px 0;
   color: var(--darkgrey);
   font-size: 1.2em;
+  text-align: left;
 }
 i {
   color: var(--orange);
 }
 a {
   text-decoration: none;
-  color: var(--orange);
+  color: var(--darkgrey);
 }
 a:hover {
   text-decoration: none;

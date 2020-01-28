@@ -2,7 +2,10 @@
   <footer class="footer footer-distributed">
     <div class="footer-left">
       <img src="@/assets/img/logo_white_200x200.png" />
-      <h3>About<span> Plant-Shop</span></h3>
+      <h3>
+        About
+        <span>Plant-Shop</span>
+      </h3>
 
       <p class="footer-links">
         <a href="#">Home</a>
@@ -14,9 +17,7 @@
         <a href="#">Contact</a>
       </p>
 
-      <p class="footer-company-name">
-        © 2019 T-Systems Multi-Media-Solutions.
-      </p>
+      <p class="footer-company-name">© 2019 T-Systems Multi-Media-Solutions.</p>
     </div>
 
     <div class="footer-center">
@@ -47,11 +48,21 @@
         We not only sell plants :-)
       </p>
       <div class="footer-icons">
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-instagram"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#">
+          <i class="fa fa-facebook"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-twitter"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-instagram"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-linkedin"></i>
+        </a>
+        <a href="#">
+          <i class="fa fa-youtube"></i>
+        </a>
       </div>
     </div>
   </footer>
@@ -76,7 +87,6 @@ export default {
   width: 100%;
   text-align: left;
   padding: 50px 50px 60px 50px;
-  margin-top: 80px;
 }
 
 .footer-distributed .footer-left,

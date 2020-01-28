@@ -2,7 +2,11 @@
   <div class="header top-nav-bar">
     <div class="search-box">
       <router-link :to="'/' + $i18n.locale">
-        <img src="@/assets/img/logo_200x200.png" alt="Plant-Shop-Logo" class="logo" />
+        <img
+          src="@/assets/img/logo_200x200.png"
+          alt="Plant-Shop-Logo"
+          class="logo"
+        />
       </router-link>
       <router-link :to="'/' + $i18n.locale">
         <h1>{{ $t("title") }}</h1>
@@ -33,13 +37,21 @@
               <tbody v-for="(cartProduct, index) in cartProducts" :key="index">
                 <tr>
                   <td>
-                    <img :src="cartProduct.image" :alt="cartProduct.title" width="50" />
+                    <img
+                      :src="cartProduct.image"
+                      :alt="cartProduct.title"
+                      width="50"
+                    />
                   </td>
                   <td>{{ cartProduct.title }}</td>
                   <td>{{ cartProduct.price.toFixed(2) }}€</td>
-                  <td class="product-${cartProduct.id}">{{ cartProduct.qty }}</td>
+                  <td class="product-${cartProduct.id}">
+                    {{ cartProduct.qty }}
+                  </td>
                   <td>
-                    <a href="#" @click="remove(cartProduct.id)" class="remove">X</a>
+                    <a href="#" @click="remove(cartProduct.id)" class="remove"
+                      >X</a
+                    >
                   </td>
                 </tr>
               </tbody>
@@ -49,7 +61,8 @@
               :to="'/' + $i18n.locale + '/login'"
               id="clear-cart"
               class="button-clear-cart u-full-width"
-            >{{ $t("header.cart.buy") }}</router-link>
+              >{{ $t("header.cart.buy") }}</router-link
+            >
           </div>
         </li>
         <li>
@@ -278,6 +291,10 @@ td:last-child {
   }
   .search-box {
     width: 100%;
+  }
+  .top-nav-bar .search-box img.logo {
+    height: 47px;
+    margin: 10px 50px;
   }
   .top-nav-bar .search-box h1 {
     font-size: 32px;

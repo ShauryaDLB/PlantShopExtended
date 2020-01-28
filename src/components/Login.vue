@@ -4,20 +4,21 @@
       <div class="button-box">
         <div id="btn"></div>
         <button id="login-btn" @click="login()">{{ $t("login.login") }}</button>
-        <button id="register-btn" @click="register()">{{ $t("login.register") }}</button>
+        <button id="register-btn" @click="register()">
+          {{ $t("login.register") }}
+        </button>
       </div>
-      <div class="social-icons">
-        <img src="@/assets/img/fb.png" alt="facebook-icon" />
-        <img src="@/assets/img/ln.png" alt="linkedin-icon" />
-        <img src="@/assets/img/tw.png" alt="twitter-icon" />
-      </div>
+
+      <SocialIcons />
 
       <form id="login-form">
         <input type="text" placeholder="User-Name" required />
         <input type="password" placeholder="Passwort" required />
         <input type="checkbox" id="login-checkbox" />
         <label for="login-checkbox">{{ $t("login.remember") }}</label>
-        <button type="submit" @click.stop.prevent="submit()">{{ $t("login.login") }}</button>
+        <button type="submit" @click.stop.prevent="submit()">
+          {{ $t("login.login") }}
+        </button>
       </form>
 
       <form id="register-form">
@@ -26,15 +27,22 @@
         <input type="password" placeholder="Passwort" required />
         <input type="checkbox" id="register-checkbox" />
         <label for="register-checkbox">{{ $t("login.agree") }}</label>
-        <button type="submit" @click.stop.prevent="submit()">{{ $t("login.register") }}</button>
+        <button type="submit" @click.stop.prevent="submit()">
+          {{ $t("login.register") }}
+        </button>
       </form>
     </div>
   </div>
 </template>
 
 <script>
+import SocialIcons from "@/components/SocialIcons.vue";
+
 export default {
   name: "Login",
+  components: {
+    SocialIcons
+  },
   methods: {
     register() {
       document.getElementById("login-form").style.left = "-400px";
@@ -107,15 +115,6 @@ export default {
 }
 .login .form-box .button-box #register-btn {
   color: var(--darkgrey);
-}
-.login .form-box .social-icons {
-  margin: 30px auto;
-  text-align: center;
-}
-.login .form-box .social-icons img {
-  width: 30px;
-  margin: 0 12px;
-  cursor: pointer;
 }
 .login .form-box form {
   position: absolute;

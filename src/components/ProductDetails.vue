@@ -15,15 +15,19 @@
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <p class="price">€ 40,00</p>
-          <p>
-            <b>Verfügbarkeit:</b>verfügbar
-          </p>
-          <p>
-            <b>Zustand:</b>neu
-          </p>
+          <p><b>Verfügbarkeit:</b>verfügbar</p>
+          <p><b>Zustand:</b>neu</p>
           <label for="productQuantity">Quantity:</label>
-          <input id="productQuantity" type="number" min="1" max="99" v-model="qty" />
-          <button class="btn btn-primary" @click="addProduct">Add to Cart</button>
+          <input
+            id="productQuantity"
+            type="number"
+            min="1"
+            max="99"
+            v-model="qty"
+          />
+          <button class="btn btn-primary" @click="addProduct">
+            Add to Cart
+          </button>
         </div>
       </div>
     </div>

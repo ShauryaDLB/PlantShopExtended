@@ -3,13 +3,17 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#description">Description</a>
+        <a class="nav-link active" data-toggle="tab" href="#description"
+          >Description</a
+        >
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#make-review">Write a Review</a>
+        <a class="nav-link" data-toggle="tab" href="#make-review"
+          >Write a Review</a
+        >
       </li>
     </ul>
 
@@ -24,7 +28,7 @@
         <div v-for="(review, index) in product.reviews" :key="index">
           <p>
             <b>Autor:</b>
-            {{ review.author}}
+            {{ review.author }}
           </p>
           <p>Rating: {{ review.rating }}</p>
           <p>Bewertung: {{ review.review }}</p>

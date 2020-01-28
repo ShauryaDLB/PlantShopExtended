@@ -34,4 +34,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.on-sale {
+  margin-bottom: 30px;
+}
+</style>
