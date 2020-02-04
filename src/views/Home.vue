@@ -20,11 +20,6 @@ import ShowcaseProducts from "@/components/ShowcaseProducts.vue";
 
 export default {
   name: "Home",
-  data() {
-    return {
-      info: null
-    };
-  },
   components: {
     BreadCrump,
     Title,
@@ -33,9 +28,6 @@ export default {
     FeaturedCategories,
     ShowcaseProducts
   },
-  mounted() {
-    this.$store.dispatch("loadSubscribers");
-  },
   computed: {
     ...mapState({
       products: state => state.products
@@ -43,6 +35,7 @@ export default {
     translateTitleBox() {
       return this.$t("home.titleBox");
     }
-  }
+  },
+  mounted() {}
 };
 </script>

@@ -196,7 +196,7 @@ export default new Vuex.Store({
         ]
       }
     ],
-    subscribers: []
+    newPosts: []
   },
   mutations: {
     add(state, newProduct) {
@@ -210,17 +210,18 @@ export default new Vuex.Store({
       const index = state.cartProducts.findIndex(e => e.id === id);
       state.cartProducts.splice(index, 1);
     },
-    SET_SUBSCRIBERS(state, subscribers) {
-      state.subscribers = subscribers;
+    /* ONLY FOR DEV -> change newPosts to posts if all works */
+    SET_POSTS(state, posts) {
+      state.posts = posts;
     }
   },
   actions: {
-    loadSubscribers({ commit }) {
+    loadPosts({ commit }) {
       axios
-        .get("http://localhost:3000/subscribers")
+        .get("http://localhost:3000/posts")
         .then(res => res.data)
-        .then(subscribers => {
-          commit("SET_SUBSCRIBERS", subscribers);
+        .then(posts => {
+          commit("SET_POSTS", posts);
         });
     }
   },
