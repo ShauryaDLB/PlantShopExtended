@@ -88,115 +88,7 @@ export default new Vuex.Store({
       }
     ],
     cartProducts: [],
-    posts: [
-      {
-        id: 1,
-        unreadPost: false,
-        title: "Was kosten rote Rosen",
-        author: "Arvid",
-        image: require("@/assets/img/arvid.jpg"),
-        created: "20.01.2020",
-        viewCount: 56,
-        replyCount: 3,
-        lastUpdate: "gerade eben",
-        lastUpdateBy: "Marco",
-        content:
-          "Hallo PlantShop, ich würde mich gerne erkundigen, wieviel ich in etwa für rote Rosen ausgeben muss? Mein Budget ist maximal 100 €.",
-        replies: [
-          {
-            author: "Marco Krause",
-            content:
-              "Hallo Arvid, meistens kosten Rosen 20 - 40 Euro, aber für seltene Exemplare kann man auch mal gut und gerne über 100 Euro auf den Tisch legen.",
-            date: "vor 3 Stunden"
-          },
-          {
-            author: "Peter Lohse",
-            content:
-              "Ich habe letztens im Karstadt welche für 15,- € bekommen.",
-            date: "vor 5 Minuten"
-          }
-        ]
-      },
-      {
-        id: 2,
-        unreadPost: true,
-        title: "frische Nelken",
-        author: "Romy",
-        image: require("@/assets/img/romy.jpg"),
-        created: "05.01.2020",
-        viewCount: 80,
-        replyCount: 10,
-        lastUpdate: "vor 40 Minuten",
-        lastUpdateBy: "Robert",
-        content:
-          "Wo gibt es frische Nelken hier in Dresden. Ich möchte welche für meine Großmutter kaufen.",
-        replies: [
-          {
-            author: "Peter L.",
-            content: "Meistens an der Elbe oder in Gärten",
-            date: "vor 9 Stunden"
-          },
-          {
-            author: "Peter L.",
-            content: "Oder du schaust mal bei Eby Kleinanzeigen",
-            date: "vor 7 Minuten"
-          }
-        ]
-      },
-      {
-        id: 3,
-        unreadPost: true,
-        title: "Wann blühen Margeriten",
-        author: "Marco",
-        image: require("@/assets/img/marco.jpg"),
-        created: "13.01.2020",
-        viewCount: 200,
-        replyCount: 34,
-        lastUpdate: "vor 2 Tagen",
-        lastUpdateBy: "Lena",
-        content:
-          "Wann blühen Margeriten den am schönsten. Ich habe gehört im Frühling??",
-        replies: [
-          {
-            author: "Rayk",
-            content: "Winter",
-            date: "vor 4 Stundne"
-          },
-          {
-            author: "Rayk",
-            content: "Ne Herbst",
-            date: "gerade eben"
-          }
-        ]
-      },
-      {
-        id: 4,
-        unreadPost: false,
-        title: "Wie oft gießt man Tulpen",
-        author: "Lena",
-        image: require("@/assets/img/lena.jpg"),
-        created: "20.01.2020",
-        viewCount: 5,
-        replyCount: 2,
-        lastUpdate: "vor 2 Minuten",
-        lastUpdateBy: "Peter L.",
-        content:
-          "Hallo liebe Community, ich bin mir nicht sicher wie oft ich meine Tulpen gießen muss. Wäre sehr dankbar für HIlfe.",
-        replies: [
-          {
-            author: "Marco Krause",
-            content: "Einmal pro Woche reicht?",
-            date: "vor 4 Stunden"
-          },
-          {
-            author: "Peter Lohse",
-            content: "@Marco: Bist du verrückt? Mindestens 3 mal die Woche.",
-            date: "vor 5 Minuten"
-          }
-        ]
-      }
-    ],
-    newPosts: []
+    posts: []
   },
   mutations: {
     add(state, newProduct) {
@@ -210,7 +102,6 @@ export default new Vuex.Store({
       const index = state.cartProducts.findIndex(e => e.id === id);
       state.cartProducts.splice(index, 1);
     },
-    /* ONLY FOR DEV -> change newPosts to posts if all works */
     SET_POSTS(state, posts) {
       state.posts = posts;
     }
