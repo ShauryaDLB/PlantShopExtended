@@ -3,7 +3,7 @@
     <!-- Create Post -->
     <form @submit.prevent="sendPost">
       <div class="create-post row">
-        <div class="col-2">
+        <div class="col-4">
           <p class="float-left">Create a new Post:</p>
           <input type="text" v-model="newPost.author" placeholder="Name" />
         </div>
@@ -31,28 +31,27 @@
         <div class="row reactions">
           <div class="col-2">
             <a @click="likePost(post._id)">
-              <i class="fa fa-thumbs-up"></i>Like({{ post.likedBy.length }})
+              <i class="fa fa-thumbs-up"></i>
+              Like({{ post.likedBy.length }})
             </a>
           </div>
 
           <div class="col-2">
-            <a @click="sendReply(post._id)"
-              ><i class="fa fa-reply"></i> Reply</a
-            >
+            <a @click="sendReply(post._id)">
+              <i class="fa fa-reply"></i> Reply
+            </a>
           </div>
           <div class="col-2">More...</div>
-          <div class="col-2"><a @click="deletePost(post._id)">Delete</a></div>
+          <div class="col-2">
+            <a @click="deletePost(post._id)">Delete</a>
+          </div>
         </div>
 
         <!-- Show Replies -->
         <div v-for="(answer, index) in post.replies" :key="index">
           <div class="row replies">
             <div class="col-2">
-              <img
-                height="50"
-                :src="answer.img"
-                :alt="answer.author + '-Foto'"
-              />
+              <img height="50" :src="answer.img" :alt="answer.author + '-Foto'" />
             </div>
             <div class="col-10 content">
               <div class="author-created">
@@ -65,10 +64,13 @@
           </div>
           <div class="row reactions">
             <div class="col-2">
-              <i class="fa fa-thumbs-up"></i> Like({{ answer.likes }})
+              <i class="fa fa-thumbs-up"></i>
+              Like({{ answer.likes }})
             </div>
 
-            <div class="col-2"><i class="fa fa-reply"></i> Reply</div>
+            <div class="col-2">
+              <i class="fa fa-reply"></i> Reply
+            </div>
           </div>
         </div>
       </div>
@@ -162,10 +164,13 @@ export default {
         .catch(error => (this.output = error));
     },
     deletePost(id) {
-      axios
-        .delete("http://localhost:3000/posts/" + id)
-        .then(response => (this.output = response.data))
-        .catch(error => (this.output = error));
+      const result = confirm("Wirklich löschen?");
+      if (result) {
+        axios
+          .delete("http://localhost:3000/posts/" + id)
+          .then(response => (this.output = response.data))
+          .catch(error => (this.output = error));
+      }
     },
     dateMoment(date) {
       return moment(date).format("DD-MM-YYYY");
