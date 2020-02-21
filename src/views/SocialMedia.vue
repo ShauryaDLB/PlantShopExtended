@@ -2,24 +2,18 @@
   <div class="social-media container">
     <!-- Create Post -->
     <form @submit.prevent="sendPost">
-      <div class="create-post row">
-        <div class="col-4">
-          <p class="float-left">Create a new Post:</p>
-          <input type="text" v-model="newPost.author" placeholder="Name" />
-        </div>
-        <div class="col-5">
-          <textarea v-model="newPost.content" cols="50" rows="5"></textarea>
-        </div>
+      <div class="create-post">
+        <textarea v-model="newPost.content" cols="50" rows="3"></textarea>
+
+        <input type="text" v-model="newPost.author" placeholder="Your Name" />
+        <input type="text" v-model="newPost.contentImage" placeholder="img-link" />
       </div>
-      <div>
-        <input type="submit" value="Submit" class="btn btn-primary" />
-      </div>
+      <input type="submit" value="Submit" class="btn btn-primary" />
     </form>
-    <hr />
     <!-- Show all Posts -->
     <div v-for="post in posts" :key="post._id" class="row post">
       <div class="col-3">
-        <img height="100" :src="post.img" :alt="post.author + '-Foto'" />
+        <img class="userImage" height="100" :src="post.img" :alt="post.author + '-Foto'" />
       </div>
       <div class="col-9">
         <div class="author-created">
@@ -28,21 +22,27 @@
           <span class="created">{{ dateMoment(post.created) }}</span>
         </div>
         <div class="content">{{ post.content }}</div>
+        <img
+          v-if="post.contentImage"
+          width="500"
+          :src="post.contentImage"
+          :alt="post.author + 'Bild'"
+        />
         <div class="row reactions">
-          <div class="col-2">
+          <div class="col-3">
             <a @click="likePost(post._id)">
               <i class="fa fa-thumbs-up"></i>
               Like({{ post.likedBy.length }})
             </a>
           </div>
 
-          <div class="col-2">
+          <div class="col-3">
             <a @click="sendReply(post._id)">
               <i class="fa fa-reply"></i> Reply
             </a>
           </div>
-          <div class="col-2">More...</div>
-          <div class="col-2">
+          <div class="col-3">More...</div>
+          <div class="col-3">
             <a @click="deletePost(post._id)">Delete</a>
           </div>
         </div>
@@ -63,12 +63,12 @@
             </div>
           </div>
           <div class="row reactions">
-            <div class="col-2">
+            <div class="col-3">
               <i class="fa fa-thumbs-up"></i>
               Like({{ answer.likes }})
             </div>
 
-            <div class="col-2">
+            <div class="col-3">
               <i class="fa fa-reply"></i> Reply
             </div>
           </div>
@@ -90,7 +90,8 @@ export default {
       newPost: {
         author: null,
         content: null,
-        img: null
+        img: null,
+        contentImage: null
       },
       output: null
     };
@@ -116,11 +117,15 @@ export default {
           break;
         case "Marco":
           this.newPost.img =
-            "https://res.cloudinary.com/htw-dresden/image/upload/v1580816359/marco_cncpsd.jpg";
+            "https://res.cloudinary.com/htw-dresden/image/upload/v1582288683/marco-krause-foto.1024x1024_v0sbbg.jpg";
           break;
         case "Lena":
           this.newPost.img =
-            "https://res.cloudinary.com/htw-dresden/image/upload/v1580816359/lena_p2lehu.jpg";
+            "https://res.cloudinary.com/htw-dresden/image/upload/v1582288346/900_sxpmzq.jpg";
+          break;
+        case "Robert":
+          this.newPost.img =
+            "https://res.cloudinary.com/htw-dresden/image/upload/v1582288507/900_1_vsdj11.jpg";
           break;
 
         default:
@@ -132,7 +137,8 @@ export default {
         .post("http://localhost:3000/posts", {
           author: this.newPost.author,
           content: this.newPost.content,
-          img: this.newPost.img
+          img: this.newPost.img,
+          contentImage: this.newPost.contentImage
         })
         .then(response => (this.output = response.data))
         .catch(error => (this.output = error));
@@ -140,6 +146,7 @@ export default {
       this.newPost.author = "";
       this.newPost.content = "";
       this.newPost.img = "";
+      this.newPost.contentImage = "";
     },
     sendReply(id) {
       axios
@@ -186,32 +193,52 @@ export default {
 
 <style scoped>
 .social-media {
-  width: 70%;
-  color: var(--black);
-  font-size: 1.2em;
-  min-height: 70vh;
+  width: 50%;
+  min-height: 100vh;
   margin-top: 30px;
 }
+.create-post {
+  border: solid 1px var(--lightgrey);
+  border-radius: 2px;
+  background-color: var(--white);
+}
 textarea {
-  border-radius: 10px;
-  background-color: var(--superlightgrey);
+  width: 100%;
   border: none;
   padding: 10px;
+  resize: none;
 }
-.btn {
-  margin-bottom: 50px;
-  background-color: var(--orange);
+textarea:focus {
+  outline: none !important;
   border: none;
 }
-button.btn:hover {
+input[type="text"] {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-top: 1px solid var(--superlightgrey);
+}
+input[type="text"]:focus {
+  outline: none !important;
+}
+.btn {
   background-color: var(--cyan);
+  border: none;
+  float: right;
+  margin-top: 10px;
+}
+.btn:hover {
+  background-color: var(--cyan);
+}
+.btn:focus {
+  background-color: var(--cyan);
+  border: none;
 }
 .post {
   margin-bottom: 50px;
+  margin-top: 80px;
 }
-img {
-  border-radius: 50%;
-}
+
 .author-created {
   text-align: left;
 }
@@ -222,6 +249,9 @@ img {
 .created {
   font-style: italic;
   color: var(--darkgrey);
+}
+.userImage {
+  border-radius: 50%;
 }
 .content {
   padding: 15px;
