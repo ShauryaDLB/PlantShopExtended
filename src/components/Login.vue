@@ -3,33 +3,31 @@
     <div class="form-box">
       <div class="button-box">
         <div id="btn"></div>
-        <button id="login-btn" @click="login()">{{ $t("login.login") }}</button>
-        <button id="register-btn" @click="register()">
-          {{ $t("login.register") }}
-        </button>
+        <button id="login-btn" @click="showLogin()">{{ $t("login.login") }}</button>
+        <button id="register-btn" @click.stop.prevent="showSignup()">{{ $t("login.register") }}</button>
       </div>
 
       <SocialIcons />
 
       <form id="login-form">
-        <input type="text" placeholder="User-Name" required />
-        <input type="password" placeholder="Passwort" required />
+        <input type="text" placeholder="Username" v-model="login_username" required />
+        <input type="password" placeholder="Password" v-model="login_password" required />
         <input type="checkbox" id="login-checkbox" />
         <label for="login-checkbox">{{ $t("login.remember") }}</label>
-        <button type="submit" @click.stop.prevent="submit()">
-          {{ $t("login.login") }}
-        </button>
+        <button type="submit" @click.stop.prevent="login">{{ $t("login.login") }}</button>
+        <div class="alert alert-success" v-if="message">{{ message }}</div>
+        <div class="alert alert-danger" v-if="error">{{ error }}</div>
       </form>
 
       <form id="register-form">
-        <input type="text" placeholder="User-Name" required />
-        <input type="text" placeholder="E-Mail" required />
-        <input type="password" placeholder="Passwort" required />
+        <input type="text" placeholder="Username" v-model="username" />
+        <input type="password" placeholder="Password" v-model="password" />
+        <input type="password" placeholder="Passwort" v-model="password_repeat" />
         <input type="checkbox" id="register-checkbox" />
         <label for="register-checkbox">{{ $t("login.agree") }}</label>
-        <button type="submit" @click.stop.prevent="submit()">
-          {{ $t("login.register") }}
-        </button>
+        <button type="submit" @click.stop.prevent="signUp">{{ $t("login.register") }}</button>
+        <div class="alert alert-success" v-if="message">{{ message }}</div>
+        <div class="alert alert-danger" v-if="error">{{ error }}</div>
       </form>
     </div>
   </div>
@@ -37,29 +35,78 @@
 
 <script>
 import SocialIcons from "@/components/SocialIcons.vue";
+import axios from "axios";
 
 export default {
   name: "Login",
   components: {
     SocialIcons
   },
+  data() {
+    return {
+      username: "",
+      password: "",
+      password_repeat: "",
+      login_username: "",
+      login_password: "",
+      message: "",
+      error: ""
+    };
+  },
   methods: {
-    register() {
+    showSignup() {
       document.getElementById("login-form").style.left = "-400px";
       document.getElementById("register-form").style.left = "50px";
       document.getElementById("btn").style.left = "110px";
       document.getElementById("login-btn").style.color = "var(--darkgrey)";
       document.getElementById("register-btn").style.color = "var(--white)";
     },
-    login() {
+    showLogin() {
       document.getElementById("login-form").style.left = "50px";
       document.getElementById("register-form").style.left = "450px";
       document.getElementById("btn").style.left = "0";
       document.getElementById("login-btn").style.color = "var(--white)";
       document.getElementById("register-btn").style.color = "var(--darkgrey)";
     },
-    submit() {
-      this.$router.push("/" + this.$i18n.locale + "/success");
+    async signUp() {
+      try {
+        const credentials = {
+          username: this.username,
+          password: this.password,
+          password_repeat: this.password_repeat
+        };
+        await axios
+          .post("http://localhost:3000/users/" + "sign-up", credentials)
+          .then(response => {
+            this.error = "";
+            this.message =
+              "The user " +
+              response.data.username +
+              " has been succesfully created";
+          });
+      } catch (error) {
+        this.message = "";
+        this.error = error.response.data.message;
+      }
+    },
+    async login() {
+      try {
+        const credentials = {
+          username: this.login_username,
+          password: this.login_password
+        };
+        await axios
+          .post("http://localhost:3000/users/" + "login", credentials)
+          .then(response => {
+            this.message =
+              response.data.user.username + " " + response.data.message;
+          });
+        setTimeout(() => {
+          this.$router.push("/" + this.$i18n.locale + "/success");
+        }, 3000);
+      } catch (error) {
+        this.error = error.response.data.message;
+      }
     }
   }
 };
@@ -77,9 +124,9 @@ export default {
 }
 .login .form-box {
   width: 380px;
-  height: 480px;
+  height: 680px;
   position: relative;
-  margin: 6% auto;
+  margin: 20% auto;
   background: var(--white);
   padding: 5px;
   border-radius: 30px;
@@ -141,7 +188,7 @@ input[type="password"] {
   color: var(--lightgrey);
   font-size: 12px;
   position: absolute;
-  bottom: 65px;
+  bottom: 165px;
 }
 .login .form-box form button[type="submit"] {
   width: 85%;
@@ -154,6 +201,7 @@ input[type="password"] {
   border: 0;
   outline: none;
   border-radius: 30px;
+  margin: 10%;
 }
 .login .form-box form#login-form {
   left: 50px;

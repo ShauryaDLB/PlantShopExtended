@@ -3,11 +3,11 @@ import Vuex from "vuex";
 import axios from "axios";
 import createPersistedState from "vuex-persistedstate";
 
-import AuthService from "@/services/AuthService.js";
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  strict: true,
+  plugins: [createPersistedState()],
   state: {
     products: [
       {
@@ -91,7 +91,17 @@ export default new Vuex.Store({
       }
     ],
     cartProducts: [],
-    posts: []
+    posts: [],
+    user: {},
+    token: ""
+  },
+  getters: {
+    isLoggedIn: state => {
+      return state.token;
+    },
+    getUser: state => {
+      return state.user;
+    }
   },
   mutations: {
     add(state, newProduct) {
@@ -107,6 +117,16 @@ export default new Vuex.Store({
     },
     SET_POSTS(state, posts) {
       state.posts = posts;
+    },
+    SET_TOKEN: (state, token) => {
+      state.token = token;
+    },
+    SET_USER: (state, user) => {
+      state.user = user;
+    },
+    RESET: state => {
+      state.user = {};
+      state.token = "";
     }
   },
   actions: {
@@ -117,6 +137,16 @@ export default new Vuex.Store({
         .then(posts => {
           commit("SET_POSTS", posts);
         });
+    },
+    login: ({ commit }, { token, user }) => {
+      commit("SET_TOKEN", token);
+      commit("SET_USER", user);
+
+      //set auth header
+      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+    },
+    logout: ({ commit }) => {
+      commit("RESET", "");
     }
   },
   modules: {}

@@ -5,8 +5,12 @@ import store from "./store";
 import i18n from "./i18n";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
 Vue.config.productionTip = false;
+
+//set auth header
+axios.defaults.headers.common["Authorization"] = `Bearer ${store.state.token}`;
 
 new Vue({
   router,
