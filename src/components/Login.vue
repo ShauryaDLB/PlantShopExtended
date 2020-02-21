@@ -12,8 +12,7 @@
       <form id="login-form">
         <input type="text" placeholder="Username" v-model="login_username" required />
         <input type="password" placeholder="Password" v-model="login_password" required />
-        <input type="checkbox" id="login-checkbox" />
-        <label for="login-checkbox">{{ $t("login.remember") }}</label>
+
         <button type="submit" @click.stop.prevent="login">{{ $t("login.login") }}</button>
         <div class="alert alert-success" v-if="message">{{ message }}</div>
         <div class="alert alert-danger" v-if="error">{{ error }}</div>
@@ -23,8 +22,6 @@
         <input type="text" placeholder="Username" v-model="username" />
         <input type="password" placeholder="Password" v-model="password" />
         <input type="password" placeholder="Passwort" v-model="password_repeat" />
-        <input type="checkbox" id="register-checkbox" />
-        <label for="register-checkbox">{{ $t("login.agree") }}</label>
         <button type="submit" @click.stop.prevent="signUp">{{ $t("login.register") }}</button>
         <div class="alert alert-success" v-if="message">{{ message }}</div>
         <div class="alert alert-danger" v-if="error">{{ error }}</div>
@@ -68,6 +65,11 @@ export default {
       document.getElementById("login-btn").style.color = "var(--white)";
       document.getElementById("register-btn").style.color = "var(--darkgrey)";
     },
+    clearMessage() {
+      setTimeout(() => {
+        this.message = this.error = "";
+      }, 3000);
+    },
     async signUp() {
       try {
         const credentials = {
@@ -84,9 +86,11 @@ export default {
               response.data.username +
               " has been succesfully created";
           });
+        this.clearMessage();
       } catch (error) {
         this.message = "";
         this.error = error.response.data.message;
+        this.clearMessage();
       }
     },
     async login() {
@@ -106,6 +110,7 @@ export default {
         }, 3000);
       } catch (error) {
         this.error = error.response.data.message;
+        this.clearMessage();
       }
     }
   }
@@ -124,9 +129,9 @@ export default {
 }
 .login .form-box {
   width: 380px;
-  height: 680px;
+  height: 530px;
   position: relative;
-  margin: 20% auto;
+  margin: 10% auto;
   background: var(--white);
   padding: 5px;
   border-radius: 30px;

@@ -91,17 +91,7 @@ export default new Vuex.Store({
       }
     ],
     cartProducts: [],
-    posts: [],
-    user: {},
-    token: ""
-  },
-  getters: {
-    isLoggedIn: state => {
-      return state.token;
-    },
-    getUser: state => {
-      return state.user;
-    }
+    posts: []
   },
   mutations: {
     add(state, newProduct) {
@@ -117,16 +107,6 @@ export default new Vuex.Store({
     },
     SET_POSTS(state, posts) {
       state.posts = posts;
-    },
-    SET_TOKEN: (state, token) => {
-      state.token = token;
-    },
-    SET_USER: (state, user) => {
-      state.user = user;
-    },
-    RESET: state => {
-      state.user = {};
-      state.token = "";
     }
   },
   actions: {
@@ -137,16 +117,6 @@ export default new Vuex.Store({
         .then(posts => {
           commit("SET_POSTS", posts);
         });
-    },
-    login: ({ commit }, { token, user }) => {
-      commit("SET_TOKEN", token);
-      commit("SET_USER", user);
-
-      //set auth header
-      axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    },
-    logout: ({ commit }) => {
-      commit("RESET", "");
     }
   },
   modules: {}
