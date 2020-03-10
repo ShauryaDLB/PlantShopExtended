@@ -1,9 +1,8 @@
 <template>
   <div class="col-lg-4 col-md-12 mb-4">
-    <p>Click the images below!</p>
     <div
       class="modal fade"
-      :id="'modal' + index"
+      :id="'modal' + id"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel"
@@ -15,7 +14,12 @@
           <!--Body-->
           <div class="modal-body mb-0 p-0">
             <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <div class="embed-responsive-item" :id="'video' + (index + 1)"></div>
+              <iframe
+                class="embed-responsive-item"
+                :src="'https://www.youtube.com/embed/' + this.video + '?enablejsapi=1'"
+                frameborder="0"
+                allowfullscreen
+              ></iframe>
             </div>
           </div>
 
@@ -25,14 +29,17 @@
       </div>
     </div>
 
-    <a>
+    <a class="imageContainer">
       <img
         class="img-fluid z-depth-1"
         :src="image"
-        alt="modal1"
+        :alt="'modal'+id"
         data-toggle="modal"
-        :data-target="'#modal' + index"
+        :data-target="'#modal' + id"
       />
+      <div class="text-block">
+        <p>Click Me!</p>
+      </div>
     </a>
   </div>
   <!-- Grid column -->
@@ -47,14 +54,27 @@ export default {
     SocialMediaFooter
   },
   props: {
-    image: String
-  },
-  computed: {
-    index() {
-      return this.$vnode.key;
-    }
+    id: Number,
+    image: String,
+    video: String
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* Container holding the image and the text */
+.imageContainer {
+  position: relative;
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: var(--cyan);
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+</style>

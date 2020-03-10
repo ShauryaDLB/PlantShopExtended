@@ -14,6 +14,10 @@
     />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>plantshop-vue</title>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+    ></script>
 
     <!-- Embed Webtrekk Tracking Script v4 Pixel  -->
     <!-- <script src="js/webtrekk_v4.min.js"></script> -->
@@ -40,10 +44,32 @@
     <!-- <script src="js/webtrekk_youtubeMediaTracking.js"></script> -->
   </head>
   <body>
-    <script
-      type="text/javascript"
-      src="https://tags.tiqcdn.com/utag/t-systems-ms-training/plantshop/dev/utag.js"
-    ></script>
+    <script type="text/javascript">
+      var utag_data = {
+        PageTitle: "",
+        page_name: "",
+        page_section: "",
+        page_category: "flowers",
+        page_subcategory: "",
+        page_type: ""
+      };
+    </script>
+
+    <script type="text/javascript">
+      (function(a, b, c, d) {
+        a =
+          "https://tags.tiqcdn.com/utag/t-systems-ms-training/plantshop/dev/utag.js";
+        b = document;
+        c = "script";
+        d = b.createElement(c);
+        d.src = a;
+        d.type = "text/java" + c;
+        d.async = true;
+        a = b.getElementsByTagName(c)[0];
+        a.parentNode.insertBefore(d, a);
+      })();
+    </script>
+
     <noscript>
       <strong
         >We're sorry but plantshop-vue doesn't work properly without JavaScript

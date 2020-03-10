@@ -17,7 +17,7 @@
         <li class="submenu">
           <router-link :to="'/' + $i18n.locale + '/login'">
             <i class="fa fa-shopping-cart"></i>
-            {{ $t("header.cart.title") }}(0)
+            {{ $t("header.cart.title") }}
           </router-link>
           <div id="shopping-cart">
             <table id="cart-content" class="u-full-width">

@@ -2,10 +2,11 @@
   <!-- Video Modals -->
   <div class="row video-modals">
     <VideoModal
-      v-for="(image, index) in images"
-      :key="index"
-      :image="image"
-      :index="index"
+      v-for="video in videos"
+      :key="video.id"
+      :image="video.image"
+      :video="video.video"
+      :id="video.id"
     />
   </div>
 </template>
@@ -20,10 +21,22 @@ export default {
   },
   data() {
     return {
-      images: [
-        require("@/assets/img/modal1.jpg"),
-        require("@/assets/img/modal2.jpg"),
-        require("@/assets/img/modal3.jpg")
+      videos: [
+        {
+          id: 1,
+          image: require("@/assets/img/modal1.jpg"),
+          video: "B8xHukKq1Uk"
+        },
+        {
+          id: 2,
+          image: require("@/assets/img/modal2.jpg"),
+          video: "A4pmZ45BY1I"
+        },
+        {
+          id: 3,
+          image: require("@/assets/img/modal3.jpg"),
+          video: "R0BPcvlguJA"
+        }
       ]
     };
   }
