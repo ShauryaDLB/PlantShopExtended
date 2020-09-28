@@ -22,7 +22,9 @@
       type="button"
       class="btn btn-outline-primary btn-rounded btn-md ml-4"
       data-dismiss="modal"
-    >Close</button>
+    >
+      Close
+    </button>
   </div>
 </template>
 
@@ -35,5 +37,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

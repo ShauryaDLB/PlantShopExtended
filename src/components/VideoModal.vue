@@ -16,7 +16,11 @@
             <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
               <iframe
                 class="embed-responsive-item"
-                :src="'https://www.youtube.com/embed/' + this.video + '?enablejsapi=1'"
+                :src="
+                  'https://www.youtube.com/embed/' +
+                    this.video +
+                    '?enablejsapi=1'
+                "
                 frameborder="0"
                 allowfullscreen
               ></iframe>
@@ -33,7 +37,7 @@
       <img
         class="img-fluid z-depth-1"
         :src="image"
-        :alt="'modal'+id"
+        :alt="'modal' + id"
         data-toggle="modal"
         :data-target="'#modal' + id"
       />
