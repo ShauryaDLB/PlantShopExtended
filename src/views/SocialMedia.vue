@@ -6,14 +6,23 @@
         <textarea v-model="newPost.content" cols="50" rows="3"></textarea>
 
         <input type="text" v-model="newPost.author" placeholder="Your Name" />
-        <input type="text" v-model="newPost.contentImage" placeholder="img-link" />
+        <input
+          type="text"
+          v-model="newPost.contentImage"
+          placeholder="img-link"
+        />
       </div>
       <input type="submit" value="Submit" class="btn btn-primary" />
     </form>
     <!-- Show all Posts -->
     <div v-for="post in posts" :key="post._id" class="row post">
       <div class="col-3">
-        <img class="userImage" height="100" :src="post.img" :alt="post.author + '-Foto'" />
+        <img
+          class="userImage"
+          height="100"
+          :src="post.img"
+          :alt="post.author + '-Foto'"
+        />
       </div>
       <div class="col-9">
         <div class="author-created">
@@ -51,7 +60,11 @@
         <div v-for="(answer, index) in post.replies" :key="index">
           <div class="row replies">
             <div class="col-2">
-              <img height="50" :src="answer.img" :alt="answer.author + '-Foto'" />
+              <img
+                height="50"
+                :src="answer.img"
+                :alt="answer.author + '-Foto'"
+              />
             </div>
             <div class="col-10 content">
               <div class="author-created">
@@ -68,9 +81,7 @@
               Like({{ answer.likes }})
             </div>
 
-            <div class="col-3">
-              <i class="fa fa-reply"></i> Reply
-            </div>
+            <div class="col-3"><i class="fa fa-reply"></i> Reply</div>
           </div>
         </div>
       </div>
