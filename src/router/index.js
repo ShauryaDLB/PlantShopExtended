@@ -4,29 +4,12 @@ import Home from "../views/Home.vue";
 import Product from "../views/Product.vue";
 import Login from "../views/Login.vue";
 import SocialMedia from "../views/SocialMedia.vue";
-import Success from  "../views/Success.vue";
+import Success from "../views/Success.vue";
 import i18n from "@/i18n";
-import SecureComponent from "../views/secure.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: '/',
-    redirect: {
-        name: "login"
-    }
-},
-{
-    path: "/login",
-    name: "login",
-    component: Login
-},
-{
-    path: "/secure",
-    name: "secure",
-    component: SecureComponent
-},
   {
     path: "/",
     redirect: `/${i18n.locale}`
