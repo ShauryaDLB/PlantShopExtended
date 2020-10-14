@@ -11,10 +11,10 @@
           title="Quick Shop"
           ><i class="fa fa-eye"></i
         ></router-link>
-        <button type="button" class="btn btn-secondary" title="Add to Wishlist">
+        <button type="button" id="wish_btn" class="btn btn-secondary" title="Add to Wishlist">
           <i class="fa fa-heart-o"></i>
         </button>
-        <button type="button" class="btn btn-secondary" title="Add to Cart">
+        <button type="button" id="cart_btn" class="btn btn-secondary" title="Add to Cart">
           <i class="fa fa-shopping-cart"></i>
         </button>
       </div>

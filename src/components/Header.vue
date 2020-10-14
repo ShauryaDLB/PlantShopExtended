@@ -16,7 +16,7 @@
       <ul>
         <li class="submenu">
           <router-link :to="'/' + $i18n.locale + '/login'">
-            <i class="fa fa-shopping-cart"></i>
+            <i class="fa fa-shopping-cart" id="nav_cart"></i>
             {{ $t("header.cart.title") }}
           </router-link>
           <div id="shopping-cart">

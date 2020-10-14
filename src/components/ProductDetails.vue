@@ -25,7 +25,7 @@
             max="99"
             v-model="qty"
           />
-          <button class="btn btn-primary" @click="addProduct">
+          <button class="btn btn-primary" id="addToCart" @click="addProduct">
             Add to Cart
           </button>
         </div>

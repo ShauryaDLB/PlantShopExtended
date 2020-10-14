@@ -20,8 +20,9 @@
     <button
       v-if="button"
       type="button"
-      class="btn btn-outline-primary btn-rounded btn-md ml-4"
+      class="btn btn-outline-primary btn-rounded btn-md ml-4" 
       data-dismiss="modal"
+      id="videos_banner"
     >
       Close
     </button>

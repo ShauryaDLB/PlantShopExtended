@@ -3,20 +3,17 @@
     <div class="form-box">
       <div class="button-box">
         <div id="btn"></div>
-        <button id="login-btn" @click="showLogin()">{{ $t("login.login") }}</button>
-        <button id="register-btn" @click.stop.prevent="showSignup()">{{ $t("login.register") }}</button>
+        <button id="login-btn" class="abc" @click="showLogin()">{{ $t("login.login") }}</button>
+        <button id="register-btn" class ="def" @click.stop.prevent="showSignup()">{{ $t("login.register") }}</button>
       </div>
 
       <SocialIcons />
 
       <form id="login-form">
-        <input type="text" placeholder="Username" v-model="login.username" required />
-        <input type="password" placeholder="Password" v-model="login.password" required />
-        <button type ="submit" v-on:click ="login()">Login </button>
-       </form>
+        <input type="text" placeholder="Username" v-model="login_username" required />
+        <input type="password" placeholder="Password" v-model="login_password" required />
 
-        <!--<button type="submit" @click.stop.prevent="login">{{ $t("login.login") }}</button>
-        
+        <button type="submit" class="login_submit" @click.stop.prevent="login">{{ $t("login.login") }}</button>
         <div class="alert alert-success" v-if="message">{{ message }}</div>
         <div class="alert alert-danger" v-if="error">{{ error }}</div>
       </form>
@@ -25,17 +22,17 @@
         <input type="text" placeholder="Username" v-model="username" />
         <input type="password" placeholder="Password" v-model="password" />
         <input type="password" placeholder="Passwort" v-model="password_repeat" />
-        <button type="submit" @click.stop.prevent="signUp">{{ $t("login.register") }}</button>
+        <button type="submit" class ="login_register" @click.stop.prevent="signUp">{{ $t("login.register") }}</button>
         <div class="alert alert-success" v-if="message">{{ message }}</div>
         <div class="alert alert-danger" v-if="error">{{ error }}</div>
-      </form>-->
+      </form>
     </div>
   </div>
 </template>
 
 <script>
 import SocialIcons from "@/components/SocialIcons.vue";
-//import axios from "axios";
+import axios from "axios";
 
 export default {
   name: "Login",
@@ -44,35 +41,16 @@ export default {
   },
   data() {
     return {
-      /*
       username: "",
       password: "",
       password_repeat: "",
       login_username: "",
       login_password: "",
       message: "",
-      error: ""*/
-      input:{
-        username :"",
-        password :""
-      }
+      error: ""
     };
   },
   methods: {
-    login(){
-      if(this.input.username != "" && this.input.password != ""){
-        if(this.input.username == this.$parent.mockAccount.username && this.$parent.mockAccount.password){
-          this.$emit("authenticated",true);
-          this.$router.replace({name:"secure"})
-        } else {
-          console.log("The username and/or password is incorrect");
-        }
-      }
-      else {
-          console.log("Pleae input credentials!");
-        }
-    }
-    /*
     showSignup() {
       document.getElementById("login-form").style.left = "-400px";
       document.getElementById("register-form").style.left = "50px";
@@ -134,7 +112,7 @@ export default {
         this.error = error.response.data.message;
         this.clearMessage();
       }
-    } */
+    }
   }
 };
 </script>
