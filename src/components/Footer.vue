@@ -8,13 +8,13 @@
       </h3>
 
       <p class="footer-links">
-        <a href="#">Home</a>
+        <a id="footerHome" href="#">Home</a>
         |
-        <a href="#">Blog</a>
+        <a id="footerBlog" href="#">Blog</a>
         |
-        <a href="#">About</a>
+        <a id="footerAbout" href="#">About</a>
         |
-        <a href="#">Contact</a>
+        <a id="footerContact" href="#">Contact</a>
       </p>
 
       <p class="footer-company-name">© 2019 T-Systems Multi-Media-Solutions.</p>
@@ -36,7 +36,7 @@
       <div>
         <i class="fa fa-envelope"></i>
         <p>
-          <a href="mailto:arvid.strauss@t-systems.com"
+          <a id="mailto" href="mailto:arvid.strauss@t-systems.com"
             >arvid.strauss@t-systems.com</a
           >
         </p>
@@ -48,19 +48,19 @@
         We not only sell plants :-)
       </p>
       <div class="footer-icons">
-        <a href="#">
+        <a id="footerFB" href="#" class="facebook">
           <i class="fa fa-facebook"></i>
         </a>
-        <a href="#">
+        <a id="footerTW" href="#" class="twitter">
           <i class="fa fa-twitter"></i>
         </a>
-        <a href="#">
+        <a id="footerIG" href="#" class="instagram">
           <i class="fa fa-instagram"></i>
         </a>
-        <a href="#">
+        <a id="footerLK" href="#" class="linkedin">
           <i class="fa fa-linkedin"></i>
         </a>
-        <a href="#">
+        <a id="footerYT" href="#" class="youtube">
           <i class="fa fa-youtube"></i>
         </a>
       </div>

@@ -3,15 +3,15 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#description"
+        <a id="navDes" class="nav-link active" data-toggle="tab" href="#description"
           >Description</a
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
+        <a id="navRew" class="nav-link" data-toggle="tab" href="#reviews">Reviews</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#make-review"
+        <a id="navWRew" class="nav-link" data-toggle="tab" href="#make-review"
           >Write a Review</a
         >
       </li>

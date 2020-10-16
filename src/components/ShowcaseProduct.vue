@@ -1,7 +1,7 @@
 <template>
   <div class="showcase-product">
     <div class="product-top">
-      <router-link :to="'/' + $i18n.locale + '/product' + '/' + id"
+      <router-link :to="'/' + $i18n.locale + '/product' + '/' + id" id="bottomP" class="product"
         ><img :src="image" :alt="name"
       /></router-link>
       <div class="overlay-right">
