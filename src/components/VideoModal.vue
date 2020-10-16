@@ -33,7 +33,7 @@
       </div>
     </div>
 
-    <a class="imageContainer">
+    <a class="imageContainer" id="videos">
       <img
         class="img-fluid z-depth-1"
         :src="image"

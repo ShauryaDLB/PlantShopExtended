@@ -17,6 +17,7 @@
         </div>
       </div>
       <a
+        id="prevPic"
         class="carousel-control-prev"
         href="#carouselExampleFade"
         role="button"
@@ -26,6 +27,7 @@
         <span class="sr-only">Previous</span>
       </a>
       <a
+        id="nextPic"
         class="carousel-control-next"
         href="#carouselExampleFade"
         role="button"

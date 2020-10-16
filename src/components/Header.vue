@@ -1,10 +1,10 @@
 <template>
   <div class="header top-nav-bar">
     <div class="search-box">
-      <router-link :to="'/' + $i18n.locale">
+      <router-link :to="'/' + $i18n.locale" id="logo">
         <img src="@/assets/img/logo_200x200.png" alt="Plant-Shop-Logo" class="logo" />
       </router-link>
-      <router-link :to="'/' + $i18n.locale">
+      <router-link :to="'/' + $i18n.locale" id="plantShop">
         <h1>{{ $t("title") }}</h1>
       </router-link>
       <input type="text" class="form-control" />
