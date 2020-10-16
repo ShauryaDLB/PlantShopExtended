@@ -1,7 +1,7 @@
 <template>
   <ul class="breadcrumb">
     <li><a class="breadCrumbLink" id ="reload" href="index.html">Home</a></li>
-    <li><a class="breadCrumbLink" id="onSale" href="#onSale">On Sale</a></li>
+    <li><a class="breadCrumbLink" id="onSale" href="en/product/1">On Sale</a></li>
     <li><a class ="breadCrumbLink" id="product_l" href="#lillies">Lilien</a></li><!-- router links should be here -->
     <li>Radebeul</li>
   </ul>

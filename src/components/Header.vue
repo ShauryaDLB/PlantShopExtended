@@ -15,7 +15,7 @@
     <div class="menu-bar">
       <ul>
         <li class="submenu">
-          <router-link :to="'/' + $i18n.locale + '/login'">
+          <router-link :to="'/' + $i18n.locale + '/login'" id="topCart">
             <i class="fa fa-shopping-cart" id="nav_cart"></i>
             {{ $t("header.cart.title") }}
           </router-link>
@@ -53,13 +53,13 @@
           </div>
         </li>
         <li>
-          <router-link :to="'/' + $i18n.locale + '/social'">
+          <router-link :to="'/' + $i18n.locale + '/social'" id="topSocial">
             <i class="fa fa-user-plus"></i>
             {{ $t("header.nav.social") }}
           </router-link>
         </li>
         <li>
-          <router-link :to="'/' + $i18n.locale + '/login'">
+          <router-link :to="'/' + $i18n.locale + '/login'" id="topLogin">
             <i class="fa fa-user"></i>
             {{ $t("header.nav.login") }}
           </router-link>
