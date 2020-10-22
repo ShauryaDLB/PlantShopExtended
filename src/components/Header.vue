@@ -12,7 +12,7 @@
         <i class="fa fa-search"></i>
       </span>
     </div>
-    <div class="menu-bar">
+    <div v-if="authorize()" class="menu-bar">
       <ul>
         <li class="submenu">
           <router-link :to="'/' + $i18n.locale + '/login'" id="topCart">
@@ -71,6 +71,8 @@
 
 <script>
 import { mapState } from "vuex";
+//import Login from "@/components/Login.vue";
+
 
 export default {
   name: "Header",
@@ -82,6 +84,12 @@ export default {
   methods: {
     remove(id) {
       this.$store.commit("remove", id);
+    },
+    authorize() {
+      return true;
+      //this.authlogin = mockAccount.authenticated;
+      //return this.authlogin;
+      //return mockAccount.authenticated;
     }
   }
 };

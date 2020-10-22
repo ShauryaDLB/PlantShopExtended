@@ -32,8 +32,7 @@
 
 <script>
 import SocialIcons from "@/components/SocialIcons.vue";
-import axios from "axios";
-
+import AuthService from '@/services/AuthService.js';
 export default {
   name: "Login",
   components: {
@@ -41,10 +40,10 @@ export default {
   },
   data() {
     return {
-      authenticated: false,
+      authenticated: true,
       mockAccount: {
-        mockuser : 'shaurya',
-        mockpass : '123'
+        mockuser: "shaurya",
+        mockpass: "123"
       },
       username: "",
       password: "",
@@ -76,7 +75,18 @@ export default {
       }, 3000);
     },
     async signUp() {
-      try {
+       try {
+        const credentials = {
+          username: this.username,
+          password: this.password,
+          password_repeat: this.password_repeat
+        };
+        const response = await AuthService.signUp(credentials);
+        this.msg = response.msg;
+      } catch (error) {
+        this.msg = 'Something went wrong';
+      }
+      /*try {
         const credentials = {
           username: this.username,
           password: this.password,
@@ -96,9 +106,32 @@ export default {
         this.message = "";
         this.error = error.response.data.message;
         this.clearMessage();
+      }*/
+    },
+    auth (){
+      if(this.authenticated){
+        this.authenticated = false;
+      }
+      else{
+        this.authenticated = true;
       }
     },
     async login() {
+      try{
+        const credentials = {
+          username: this.username,
+          password: this.password
+        };
+        const response = await AuthService.login(credentials);
+        this.msg = response.msg;
+        const token = response.token;
+        const user = response.user;
+        this.$store.dispatch('login', { token, user });
+        this.$router.push("/" + this.$i18n.locale + "/success");
+      }
+       catch (error) {
+        this.msg = 'Something went wrong';
+      }
       /*try {
         const credentials = {
           username: this.login_username,
@@ -119,9 +152,13 @@ export default {
       }*/
       if ((this.login_username === this.mockAccount.mockuser)
         &&(this.login_password === this.mockAccount.mockpass)){
+          this.auth();
           setTimeout(() => {
           this.$router.push("/" + this.$i18n.locale + "/success");
         }, 1500);
+        }
+        else {
+          alert('Please enter valid credentials');
         }
       }
   }
