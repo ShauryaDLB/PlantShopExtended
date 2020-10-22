@@ -2,19 +2,19 @@
   <!--Social Media Footer-->
   <div class="modal-footer justify-content-center">
     <span class="mr-4">Spread the word!</span>
-    <a type="button" class="btn-floating btn-sm btn-fb">
+    <a type="button" class="btn-floating btn-sm btn-fb" id="fbk">
       <i class="fa fa-facebook-f"></i>
     </a>
     <!--Twitter-->
-    <a type="button" class="btn-floating btn-sm btn-tw">
+    <a type="button" class="btn-floating btn-sm btn-tw" id="twat">
       <i class="fa fa-twitter"></i>
     </a>
     <!--Google +-->
-    <a type="button" class="btn-floating btn-sm btn-gplus">
+    <a type="button" class="btn-floating btn-sm btn-gplus" id="gog"> 
       <i class="fa fa-google-plus"></i>
     </a>
     <!--Linkedin-->
-    <a type="button" class="btn-floating btn-sm btn-ins">
+    <a type="button" class="btn-floating btn-sm btn-ins" id="lkdn">
       <i class="fa fa-linkedin"></i>
     </a>
     <button

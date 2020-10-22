@@ -9,6 +9,7 @@
           :to="'/' + $i18n.locale + '/product' + '/' + id"
           class="btn btn-secondary"
           title="Quick Shop"
+          id="quickShop"
           ><i class="fa fa-eye"></i
         ></router-link>
         <button type="button" id="wish_btn" class="btn btn-secondary" title="Add to Wishlist">
