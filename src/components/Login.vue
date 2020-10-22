@@ -41,6 +41,11 @@ export default {
   },
   data() {
     return {
+      authenticated: false,
+      mockAccount: {
+        mockuser : 'shaurya',
+        mockpass : '123'
+      },
       username: "",
       password: "",
       password_repeat: "",
@@ -94,7 +99,7 @@ export default {
       }
     },
     async login() {
-      try {
+      /*try {
         const credentials = {
           username: this.login_username,
           password: this.login_password
@@ -111,8 +116,14 @@ export default {
       } catch (error) {
         this.error = error.response.data.message;
         this.clearMessage();
+      }*/
+      if ((this.login_username === this.mockAccount.mockuser)
+        &&(this.login_password === this.mockAccount.mockpass)){
+          setTimeout(() => {
+          this.$router.push("/" + this.$i18n.locale + "/success");
+        }, 1500);
+        }
       }
-    }
   }
 };
 </script>
