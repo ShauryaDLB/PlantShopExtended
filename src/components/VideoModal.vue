@@ -13,17 +13,39 @@
         <div class="modal-content">
           <!--Body-->
           <div class="modal-body mb-0 p-0">
-            <div class="embed-responsive embed-responsive-16by9 z-depth-1-half">
-              <iframe
-                class="embed-responsive-item"
-                :src="
-                  'https://www.youtube.com/embed/' +
-                    this.video +
-                    '?enablejsapi=1'
-                "
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
+            <div
+              class="embed-responsive embed-responsive-16by9 z-depth-1-half"
+              id="video_wrapper_1"
+            >
+              <div class="m-video__wrapper">
+                <button
+                  class="preview__wrapper js-enable-video"
+                  :alt="'modal' + id"
+                  data-video-id="youtube:i9tjkAi3lDc"
+                  title="THis is great!!"
+                  :id="'abc' + id"
+                >
+                  <img
+                    class="img-fluid z-depth-1"
+                    :src="image"
+                    :alt="'modal' + id"
+                    data-toggle="modal"
+                    :data-target="'#modal' + id"
+                    id="def"
+                  />
+                </button>
+                <!--iframe
+                  class="embed-responsive-item"
+                  :src="
+                    'https://www.youtube.com/embed/' +
+                      this.video +
+                      '?enablejsapi=1'
+                  "
+                  frameborder="0"
+                  allowfullscreen
+                  id="videotracking_youtube_youtube:B8xHukKq1Uk"
+                ></iframe-->
+              </div>
             </div>
           </div>
 
@@ -66,6 +88,11 @@ export default {
 </script>
 
 <style scoped>
+#def {
+  height: 400px;
+  width: 450px;
+
+}
 /* Container holding the image and the text */
 .imageContainer {
   position: relative;

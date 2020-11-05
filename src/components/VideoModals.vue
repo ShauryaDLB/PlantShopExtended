@@ -10,7 +10,10 @@
     />
   </div>
 </template>
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script>
+    $('iframe').hide();
+  </script>
 <script>
 import VideoModal from "@/components/VideoModal.vue";
 
