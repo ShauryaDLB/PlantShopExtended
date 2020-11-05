@@ -73,7 +73,7 @@
 
 <script>
 import SocialMediaFooter from "@/components/SocialMediaFooter.vue";
-
+import $ from 'jquery';
 export default {
   name: "VideoModal",
   components: {
@@ -83,15 +83,40 @@ export default {
     id: Number,
     image: String,
     video: String
+  },
+  mounted(){
+      
+$(document).ready(function() {
+      // var a = $('button#abc').attr('alt')
+      $('#abc1').on('click', function(){
+        // var v1 = $('img#def').attr('alt');
+        //alert('its working ---' + v1);
+        $(this).replaceWith(
+          '<iframe data-v-4961dc22="" src="https://www.youtube.com/embed/B8xHukKq1Uk?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" id="videotracking_youtube_youtube:B8xHukKq1Uk" class="embed-responsive-item"></iframe>'
+        );
+      });
+      $('#abc2').on("click", function() {
+        // var v1 = $('img#def').attr('alt');
+        //alert('its working ---' + v1);
+        $(this).replaceWith(
+          '<iframe data-v-4961dc22="" src="https://www.youtube.com/embed/A4pmZ45BY1I?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" id="videotracking_youtube_youtube:A4pmZ45BY1I" class="embed-responsive-item"></iframe>'
+        );
+      });
+      $('#abc3').on('click', function(){
+        // var v1 = $('img#def').attr('alt');
+        //alert('its working ---' + v1);
+        $(this).replaceWith(
+          '<iframe data-v-4961dc22="" src="https://www.youtube.com/embed/cjTvpVg-GCY?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" id="videotracking_youtube_youtube:cjTvpVg-GCY" class="embed-responsive-item"></iframe>'
+        );
+      });
+    });
   }
 };
 </script>
-
 <style scoped>
 #def {
   height: 400px;
   width: 450px;
-
 }
 /* Container holding the image and the text */
 .imageContainer {
