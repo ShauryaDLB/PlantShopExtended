@@ -2,7 +2,7 @@
   <div class="col-lg-4 col-md-12 mb-4">
     <div
       class="modal fade"
-      :id="'modal' + id"
+      :id="'modall' + id"
       tabindex="-1"
       role="dialog"
       aria-labelledby="myModalLabel"
@@ -18,7 +18,7 @@
               id="video_wrapper_1"
             >
               <div class="m-video__wrapper">
-                <button
+                <!--button
                   class="preview__wrapper js-enable-video"
                   :alt="'modal' + id"
                   data-video-id="youtube:i9tjkAi3lDc"
@@ -33,7 +33,7 @@
                     :data-target="'#modal' + id"
                     id="def"
                   />
-                </button>
+                </button-->
                 <!--iframe
                   class="embed-responsive-item"
                   :src="
@@ -54,14 +54,13 @@
         </div>
       </div>
     </div>
-
     <a class="imageContainer" id="videos">
       <img
         class="img-fluid z-depth-1"
         :src="image"
         :alt="'modal' + id"
         data-toggle="modal"
-        :data-target="'#modal' + id"
+        :data-target="'#modall' + id"
       />
       <div class="text-block">
         <p>Click Me!</p>
@@ -73,9 +72,9 @@
 
 <script>
 import SocialMediaFooter from "@/components/SocialMediaFooter.vue";
-import $ from "jquery";
+//import $ from "jquery";
 export default {
-  name: "VideoModal",
+  name: "HtmlVideo",
   components: {
     SocialMediaFooter
   },
@@ -83,32 +82,6 @@ export default {
     id: Number,
     image: String,
     video: String
-  },
-  mounted(){
-    $(document).ready(function() {
-      // var a = $('button#abc').attr('alt')
-      $('#abc1').on('click', function(){
-        // var v1 = $('img#def').attr('alt');
-        //alert('its working ---' + v1);
-        $(this).replaceWith(
-          '<iframe data-v-4961dc22="" src="https://www.youtube.com/embed/B8xHukKq1Uk?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" id="videotracking_youtube_youtube:B8xHukKq1Uk" class="embed-responsive-item"></iframe>'
-        );
-      });
-      $('#abc2').on("click", function() {
-        // var v1 = $('img#def').attr('alt');
-        //alert('its working ---' + v1);
-        $(this).replaceWith(
-          '<iframe data-v-4961dc22="" src="https://www.youtube.com/embed/A4pmZ45BY1I?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" id="videotracking_youtube_youtube:A4pmZ45BY1I" class="embed-responsive-item"></iframe>'
-        );
-      });
-      $('#abc3').on('click', function(){
-        // var v1 = $('img#def').attr('alt');
-        //alert('its working ---' + v1);
-        $(this).replaceWith(
-          '<iframe data-v-4961dc22="" src="https://www.youtube.com/embed/cjTvpVg-GCY?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" id="videotracking_youtube_youtube:cjTvpVg-GCY" class="embed-responsive-item"></iframe>'
-        );
-      });
-    });
   }
 };
 </script>

@@ -23,36 +23,22 @@ export default {
       videos: [
         {
           id: 1,
-          image: require("@/assets/img/modal1.jpg"),
-          video: "B8xHukKq1Uk"
+          image: require("@/assets/img/hibiscus.jpg"),
+          video: "ghi"
         },
         {
           id: 2,
-          image: require("@/assets/img/modal2.jpg"),
-          video: "A4pmZ45BY1I"
+          image: require("@/assets/img/redflower.jpg"),
+          video: "def"
         },
         {
           id: 3,
-          image: require("@/assets/img/modal3.jpg"),
-          video: "R0BPcvlguJA"
+          image: require("@/assets/img/whiteflower.jpg"),
+          video: "abc"
         }
       ]
     };
   }
-  //   mounted() {
-  //     let webtrekkMediaTracking = document.createElement("script");
-  //     webtrekkMediaTracking.setAttribute(
-  //       "src",
-  //       "./webtrekk_mediaTracking.min.js"
-  //     );
-  //     document.head.appendChild(webtrekkMediaTracking);
-  //     let webtrekkYoutubeMediaTracking = document.createElement("script");
-  //     webtrekkYoutubeMediaTracking.setAttribute(
-  //       "src",
-  //       "./webtrekk_youtubeMediaTracking.js"
-  //     );
-  //     document.head.appendChild(webtrekkYoutubeMediaTracking);
-  //   }
 };
 </script>
 

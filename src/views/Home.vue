@@ -3,8 +3,8 @@
     <BreadCrump />
     <Title />
     <VideoModals />
-    <CarouselSlider />
     <HtmlVideos />
+    <CarouselSlider />
     <FeaturedCategories />
     <ShowcaseProducts :products="products" :titleBox="translateTitleBox" />
   </div>
