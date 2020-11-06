@@ -26,34 +26,6 @@
                   controls
                   autobuffer="autobuffer"
                 ></video>
-                <!--img :src="image"/-->
-                <!--button
-                  class="preview__wrapper js-enable-video"
-                  :alt="'modal' + id"
-                  data-video-id="youtube:i9tjkAi3lDc"
-                  title="THis is great!!"
-                  :id="'abc' + id"
-                >
-                  <img
-                    class="img-fluid z-depth-1"
-                    :src="image"
-                    :alt="'modal' + id"
-                    data-toggle="modal"
-                    :data-target="'#modal' + id"
-                    id="def"
-                  />
-                </button-->
-                <!--iframe
-                  class="embed-responsive-item"
-                  :src="
-                    'https://www.youtube.com/embed/' +
-                      this.video +
-                      '?enablejsapi=1'
-                  "
-                  frameborder="0"
-                  allowfullscreen
-                  id="videotracking_youtube_youtube:B8xHukKq1Uk"
-                ></iframe-->
               </div>
             </div>
           </div>

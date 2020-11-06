@@ -55,7 +55,7 @@
       </div>
     </div>
 
-    <a class="imageContainer" id="videos">
+    <a class="imageContainer" :id="'link' + id">
       <img
         class="img-fluid z-depth-1"
         :src="image"
@@ -87,24 +87,24 @@ export default {
   mounted(){
     $(document).ready(function() {
       // var a = $('button#abc').attr('alt')
-      $('#abc1').on('click', function(){
+      $('#link1').on('click', function(){
         // var v1 = $('img#def').attr('alt');
         //alert('its working ---' + v1);
-        $(this).replaceWith(
+        $('#abc1').replaceWith(
           '<iframe data-v-4961dc22="" src="https://www.youtube.com/embed/B8xHukKq1Uk?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" id="videotracking_youtube_youtube:B8xHukKq1Uk" class="embed-responsive-item"></iframe>'
         );
       });
-      $('#abc2').on("click", function() {
+      $('#link2').on("click", function() {
         // var v1 = $('img#def').attr('alt');
         //alert('its working ---' + v1);
-        $(this).replaceWith(
+        $('#abc2').replaceWith(
           '<iframe data-v-4961dc22="" src="https://www.youtube.com/embed/A4pmZ45BY1I?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" id="videotracking_youtube_youtube:A4pmZ45BY1I" class="embed-responsive-item"></iframe>'
         );
       });
-      $('#abc3').on('click', function(){
+      $('#link3').on('click', function(){
         // var v1 = $('img#def').attr('alt');
         //alert('its working ---' + v1);
-        $(this).replaceWith(
+        $('#abc3').replaceWith(
           '<iframe data-v-4961dc22="" src="https://www.youtube.com/embed/cjTvpVg-GCY?enablejsapi=1" frameborder="0" allowfullscreen="allowfullscreen" id="videotracking_youtube_youtube:cjTvpVg-GCY" class="embed-responsive-item"></iframe>'
         );
       });
