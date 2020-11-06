@@ -5,10 +5,28 @@ import createPersistedState from "vuex-persistedstate";
 
 Vue.use(Vuex);
 
+const getDefaultState = () => {
+  return {
+    token: '',
+    user: {}
+  };
+};
+
 export default new Vuex.Store({
   strict: true,
   plugins: [createPersistedState()],
-  state: {
+  state: { getDefaultState(){  return {
+    token: '',
+    user: {}
+  };},
+    getters: {
+      isLoggedIn: state => {
+        return state.token;
+      },
+      getUser: state => {
+        return state.user;
+      }
+    },
     products: [
       {
         id: 1,
@@ -107,9 +125,19 @@ export default new Vuex.Store({
     },
     SET_POSTS(state, posts) {
       state.posts = posts;
+    },
+    SET_TOKEN: (state, token) => {
+      state.token = token;
+    },
+    SET_USER: (state, user) => {
+      state.user = user;
+    },
+    RESET: state => {
+      Object.assign(state, getDefaultState());
     }
   },
   actions: {
+    
     loadPosts({ commit }) {
       axios
         .get("http://localhost:3000/posts")
@@ -117,6 +145,16 @@ export default new Vuex.Store({
         .then(posts => {
           commit("SET_POSTS", posts);
         });
+    },
+    login: ({ commit, dispatch }, { token, user }) => {
+      commit('SET_TOKEN', token);
+      commit('SET_USER', user);
+      // set auth header
+      console.log(dispatch);
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    },
+    logout: ({ commit }) => {
+      commit('RESET', '');
     }
   },
   modules: {}

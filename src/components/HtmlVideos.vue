@@ -1,7 +1,7 @@
 <template>
   <!-- Video Modals -->
   <div class="row video-modals">
-    <VideoModal
+    <HtmlVideo
       v-for="video in videos"
       :key="video.id"
       :image="video.image"
@@ -11,12 +11,12 @@
   </div>
 </template>
 <script>
-import VideoModal from "@/components/VideoModal.vue";
+import HtmlVideo from "@/components/HtmlVideo.vue";
 
 export default {
-  name: "VideoModals",
+  name: "HtmlVideos",
   components: {
-    VideoModal
+    HtmlVideo
   },
   data() {
     return {

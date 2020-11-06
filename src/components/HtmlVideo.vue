@@ -73,7 +73,7 @@
 
 <script>
 import SocialMediaFooter from "@/components/SocialMediaFooter.vue";
-import $ from 'jquery';
+import $ from "jquery";
 export default {
   name: "VideoModal",
   components: {

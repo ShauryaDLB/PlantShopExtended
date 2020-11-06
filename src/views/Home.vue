@@ -4,6 +4,7 @@
     <Title />
     <VideoModals />
     <CarouselSlider />
+    <HtmlVideos />
     <FeaturedCategories />
     <ShowcaseProducts :products="products" :titleBox="translateTitleBox" />
   </div>
@@ -17,7 +18,7 @@ import VideoModals from "@/components/VideoModals.vue";
 import CarouselSlider from "@/components/CarouselSlider.vue";
 import FeaturedCategories from "@/components/FeaturedCategories.vue";
 import ShowcaseProducts from "@/components/ShowcaseProducts.vue";
-
+import HtmlVideos from "@/components/HtmlVideos.vue";
 export default {
   name: "Home",
   components: {
@@ -25,6 +26,7 @@ export default {
     Title,
     VideoModals,
     CarouselSlider,
+    HtmlVideos,
     FeaturedCategories,
     ShowcaseProducts
   },

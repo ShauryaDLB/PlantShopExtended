@@ -87,9 +87,6 @@ export default {
     },
     authorize() {
       return true;
-      //this.authlogin = mockAccount.authenticated;
-      //return this.authlogin;
-      //return mockAccount.authenticated;
     }
   }
 };
