@@ -18,6 +18,15 @@
               id="video_wrapper_1"
             >
               <div class="m-video__wrapper">
+                <video
+                  :src="video"
+                  type="video/mp4"
+                  width="900"
+                  height="600"
+                  controls
+                  autobuffer="autobuffer"
+                ></video>
+                <!--img :src="image"/-->
                 <!--button
                   class="preview__wrapper js-enable-video"
                   :alt="'modal' + id"
