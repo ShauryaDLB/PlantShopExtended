@@ -17,7 +17,7 @@
               class="embed-responsive embed-responsive-16by9 z-depth-1-half"
               id="video_wrapper_1"
             >
-              <div class="m-video__wrapper">
+              <div class="m-video__wrapper_yol">
                 <video
                   :src="video"
                   type="video/mp4"
