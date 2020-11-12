@@ -23,13 +23,13 @@ export default {
       videos: [
         {
           id: 1,
-          image: require("@/assets/img/hibiscus.jpg"),
-          video: require("@/assets/videos/vidh.mp4")
+          image: require("@/assets/img/redflower.jpg"),
+          video: require("@/assets/videos/redflower.mp4")
         },
         {
           id: 2,
-          image: require("@/assets/img/redflower.jpg"),
-          video: require("@/assets/videos/redflower.mp4")
+          image: require("@/assets/img/hibiscus.jpg"),
+          video: require("@/assets/videos/vidh.mp4")
         },
         {
           id: 3,

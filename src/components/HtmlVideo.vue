@@ -1,4 +1,5 @@
 <template>
+
   <div class="col-lg-4 col-md-12 mb-4">
     <div
       class="modal fade"
@@ -18,14 +19,7 @@
               id="video_wrapper_1"
             >
               <div class="m-video__wrapper_yol">
-                <video
-                  :src="video"
-                  type="video/mp4"
-                  width="900"
-                  height="600"
-                  controls
-                  autobuffer="autobuffer"
-                ></video>
+                <video data-v-7135df90="" id ="vid1" src="/media/redflower.070ff1e9.mp4" type="video/mp4" width="900" height="600" controls="controls"></video>
               </div>
             </div>
           </div>
@@ -35,13 +29,13 @@
         </div>
       </div>
     </div>
-    <a class="imageContainer" id="videos">
+    <a class="imageContainer" :id="'videos' + id">
       <img
         class="img-fluid z-depth-1"
         :src="image"
         :alt="'modal' + id"
         data-toggle="modal"
-        :data-target="'#modall' + id"
+        :data-target="'#modall1'"
       />
       <div class="text-block">
         <p>Click Me!</p>
@@ -53,7 +47,7 @@
 
 <script>
 import SocialMediaFooter from "@/components/SocialMediaFooter.vue";
-//import $ from "jquery";
+import $ from "jquery";
 export default {
   name: "HtmlVideo",
   components: {
@@ -63,6 +57,28 @@ export default {
     id: Number,
     image: String,
     video: String
+  }, 
+  mounted(){
+        $(document).ready(function() {
+      // var a = $('button#abc').attr('alt')
+      $('#videos2').on('click', function(){
+        // var v1 = $('img#def').attr('alt');
+        //alert('its working ---' + v1);
+        $('#vid1').attr("src","/media/vidh.9668f5dc.mp4");
+      });
+      $('#videos1').on('click', function(){
+        // var v1 = $('img#def').attr('alt');
+        //alert('its working ---' + v1);
+        $('#abcd1').replaceWith(
+          '<video data-v-7135df90="" id ="vid1" src="/media/redflower.070ff1e9.mp4" type="video/mp4" width="900" height="600" controls="controls"></video>'
+        );
+      });
+      $('#videos3').on('click', function(){
+        // var v1 = $('img#def').attr('alt');
+        //alert('its working ---' + v1);
+        $('#vid1').attr("src","/media/whiteflower.6e22b208.mp4");
+      });
+    });
   }
 };
 </script>
