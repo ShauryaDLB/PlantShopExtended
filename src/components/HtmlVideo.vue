@@ -69,9 +69,7 @@ export default {
       $('#videos1').on('click', function(){
         // var v1 = $('img#def').attr('alt');
         //alert('its working ---' + v1);
-        $('#abcd1').replaceWith(
-          '<video data-v-7135df90="" id ="vid1" src="/media/redflower.070ff1e9.mp4" type="video/mp4" width="900" height="600" controls="controls"></video>'
-        );
+        $('#vid1').attr("src","/media/redflower.070ff1e9.mp4");
       });
       $('#videos3').on('click', function(){
         // var v1 = $('img#def').attr('alt');
