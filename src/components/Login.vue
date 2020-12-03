@@ -10,8 +10,9 @@
       <SocialIcons />
 
       <form id="login-form">
-        <input type="text" placeholder="Username" v-model="login_username" required />
-        <input type="password" placeholder="Password" v-model="login_password" required />
+        <input id="user" type="text" placeholder="Username" v-model="login_username" required />
+        <input id="pass" type="password" placeholder="Password" v-model="login_password" required />
+        <span id="error" style="color: red"> </span> 
 
         <button type="submit" class="login_submit" @click.stop.prevent="login">{{ $t("login.login") }}</button>
         <div class="alert alert-success" v-if="message">{{ message }}</div>
@@ -155,12 +156,12 @@ export default {
           this.auth();
           setTimeout(() => {
           this.$router.push("/" + this.$i18n.locale + "/success");
-        }, 1500);
-        }
-        else {
-          alert('Please enter valid credentials');
-        }
+        }, 100);
+      } else {
+        document.getElementById("error").innerHTML =
+          "Username or Password Invalid !";
       }
+    }
   }
 };
 </script>
