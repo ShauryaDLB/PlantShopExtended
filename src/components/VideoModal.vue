@@ -54,16 +54,23 @@
         </div>
       </div>
     </div>
-
-    <a class="imageContainer" :id="'link' + id">
-      <img
-        class="img-fluid z-depth-1"
-        :src="image"
-        :alt="'modal' + id"
-        data-toggle="modal"
-        :data-target="'#modal' + id"
-      />
-    </a>
+    <div class ="container">
+      <a class="imageContainer" :id="'link' + id">
+        <img
+          class="img-fluid z-depth-1"
+          :src="image"
+          :alt="'modal' + id"
+          data-toggle="modal"
+          :data-target="'#modal' + id"
+          id="imageHover"
+        />
+        <div class="middle">
+          <button class="text" data-toggle="modal" :data-target="'#modal' + id">
+            Click to play Video
+          </button>
+        </div>
+      </a>
+    </div>
   </div>
   <!-- Grid column -->
 </template>
@@ -121,6 +128,7 @@ export default {
 
 /* Bottom right text */
 .text-block {
+  opacity: 1;
   position: absolute;
   bottom: 0px;
   right: 0px;
@@ -128,5 +136,44 @@ export default {
   color: white;
   padding-left: 20px;
   padding-right: 20px;
+}
+#imageHover:hover {
+  transform: scale(1.1);
+}
+
+#imageHover {
+  width: 100%;
+  padding: 20px 0;
+  transition: 1s;
+  cursor: pointer;
+  border-radius: 5%;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.3;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #13a094d8;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
 }
 </style>
