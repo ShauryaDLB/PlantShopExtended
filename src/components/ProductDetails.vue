@@ -10,11 +10,11 @@
           <h2 id="title-product">{{ product.title }}</h2>
           <p>Bestell-Nr.: 72098</p>
           <i class="fa fa-star"></i>
+          <i class="fa fa-star"> </i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
-          <i class="fa fa-star"></i>
-          <p class="price">€ 40,00</p>
+          <p class="price">€ {{ product.price }}</p>
           <p><b>Verfügbarkeit:</b>verfügbar</p>
           <p><b>Zustand:</b>neu</p>
           <label for="productQuantity">Quantity:</label>
