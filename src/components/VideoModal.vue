@@ -63,9 +63,6 @@
         data-toggle="modal"
         :data-target="'#modal' + id"
       />
-      <div class="text-block">
-        <p>Click Me!</p>
-      </div>
     </a>
   </div>
   <!-- Grid column -->
