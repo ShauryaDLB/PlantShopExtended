@@ -1,18 +1,3 @@
-<script>
-window.onload = function(){
-  var a = JSON.parse(window.localStorage.getItem('vuex'));
-  var b = a["cartProducts"];
-  var i;
-  var sum =0;
-  for (i = 0; i < b.length; i++){
-    document.getElementById('prod' + i).innerHTML = b[i].title;
-    document.getElementById('prodqty' + i).innerHTML = b[i].qty;
-    document.getElementById('prodprice' + i).innerHTML ='€ ' + b[i].price;
-    sum += b[i].price;
-  }
-  document.getElementById('totalPrice').innerHTML ='€ ' + Math.round(sum);
-}
-</script>
 <template>
   <div class="success">
     <div class="jumbotron text-center" id="suc">
@@ -72,6 +57,36 @@ window.onload = function(){
     </div>
   </div>
 </template>
+<script>
+window.onload = function(){
+
+  var a = JSON.parse(window.localStorage.getItem('vuex'));
+  var b = a["cartProducts"];
+  var i;
+  var sum =0;
+  for (i = 0; i < b.length; i++){
+    document.getElementById('prod' + i).innerHTML = b[i].title;
+    document.getElementById('prodqty' + i).innerHTML = b[i].qty;
+    document.getElementById('prodprice' + i).innerHTML ='€ ' + b[i].price;
+    sum += b[i].price;
+  }
+  document.getElementById('totalPrice').innerHTML ='€ ' + Math.round(sum);
+}
+export default{
+  name: "Success",
+  mounted(){
+    if (localStorage.getItem('reloaded')) {
+        // The page was just reloaded. Clear the value from local storage
+        // so that it will reload the next time this page is visited.
+        localStorage.removeItem('reloaded');
+    } else {
+        // Set a flag so that we know not to reload the page twice.
+        localStorage.setItem('reloaded', '1');
+        location.reload();
+    }
+  }
+}
+</script>
 <style scoped>
 .imgg {
 }
