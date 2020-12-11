@@ -91,7 +91,7 @@ export default {
   mounted(){
     $(document).ready(function() {
       // var a = $('button#abc').attr('alt')
-      $('#link1').on('click', function(){
+      $("#link1").on("click", function() {
         // var v1 = $('img#def').attr('alt');
         //alert('its working ---' + v1);
         $('#abc1').replaceWith(
