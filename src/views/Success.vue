@@ -53,13 +53,11 @@
           >Zurück zur Startseite</router-link
         >
       </p>
-      
     </div>
   </div>
 </template>
 <script>
-window.onload = function(){
-
+window.onload = function() {
   var a = JSON.parse(window.localStorage.getItem("vuex"));
   var b = a["cartProducts"];
   var i;
@@ -71,10 +69,10 @@ window.onload = function(){
     sum += b[i].price * b[i].qty;
   }
   document.getElementById("totalPrice").innerHTML = "€ " + Math.round(sum);
-}
+};
 export default {
   name: "Success",
-  mounted(){
+  mounted() {
     if (localStorage.getItem("reloaded")) {
       // The page was just reloaded. Clear the value from local storage
       // so that it will reload the next time this page is visited.
