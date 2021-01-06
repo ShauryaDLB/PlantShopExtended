@@ -154,6 +154,7 @@ export default {
       if ((this.login_username === this.mockAccount.mockuser)
         &&(this.login_password === this.mockAccount.mockpass)){
           this.auth();
+          localStorage.setItem("useracc", "loggedin");
           setTimeout(() => {
           this.$router.push("/" + this.$i18n.locale + "/success");
         }, 100);

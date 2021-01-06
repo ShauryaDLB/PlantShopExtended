@@ -66,6 +66,60 @@
         </li>
       </ul>
     </div>
+    <div v-else class="menu-bar">
+      <ul>
+        <li class="submenu">
+          <router-link :to="'/' + $i18n.locale + '/login'" id="topCart">
+            <i class="fa fa-shopping-cart" id="nav_cart"></i>
+            {{ $t("header.cart.title") }}
+          </router-link>
+          <div id="shopping-cart">
+            <table id="cart-content" class="u-full-width">
+              <thead>
+                <tr>
+                  <th>{{ $t("header.cart.image") }}</th>
+                  <th>{{ $t("header.cart.name") }}</th>
+                  <th>{{ $t("header.cart.price") }}</th>
+                  <th>{{ $t("header.cart.qty") }}</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody v-for="(cartProduct, index) in cartProducts" :key="index">
+                <tr>
+                  <td>
+                    <img :src="cartProduct.image" :alt="cartProduct.title" width="50" />
+                  </td>
+                  <td>{{ cartProduct.title }}</td>
+                  <td>{{ cartProduct.price.toFixed(2) }}€</td>
+                  <td class="product-${cartProduct.id}">{{ cartProduct.qty }}</td>
+                  <td>
+                    <a href="#" @click="remove(cartProduct.id)" class="remove">X</a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <router-link
+              :to="'/' + $i18n.locale + '/login'"
+              id="clear-cart"
+              class="button-clear-cart u-full-width"
+            >{{ $t("header.cart.buy") }}</router-link>
+          </div>
+        </li>
+        <li>
+          <router-link :to="'/' + $i18n.locale + '/social'" id="topSocial">
+            <i class="fa fa-user-plus"></i>
+            {{ $t("header.nav.social") }}
+          </router-link>
+        </li>
+        <li>
+          <router-link :to="'/' + $i18n.locale " @click.native="changeVal()" id="topLogin">
+            <i class="fa fa-user"></i>
+            Logout
+          </router-link>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -86,7 +140,15 @@ export default {
       this.$store.commit("remove", id);
     },
     authorize() {
-      return true;
+      if (localStorage.getItem("useracc")) {
+        return false;
+      } else {
+        return true;
+      }
+    },
+    changeVal(){
+      localStorage.removeItem("useracc");
+      location.reload();
     }
   }
 };
