@@ -14,7 +14,7 @@
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
           <i class="fa fa-star"></i>
-          <p id="prod_price" class="price">€ {{ product.price }}</p>
+          <p id="prod_price" class="price">€ {{ outputPrice }}</p>
           <p><b>Verfügbarkeit:</b>verfügbar</p>
           <p><b>Zustand:</b>neu</p>
           <label for="productQuantity">Quantity:</label>
@@ -52,6 +52,9 @@ export default {
   computed: {
     qtyNumber() {
       return Number(this.qty);
+    },
+    outputPrice(){
+      return String(this.product.price).replace(".", ",");
     }
   },
   methods: {

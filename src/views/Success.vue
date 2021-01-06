@@ -65,7 +65,7 @@ window.onload = function() {
   for (i = 0; i < b.length; i++) {
     document.getElementById("prod" + i).innerHTML = b[i].title;
     document.getElementById("prodqty" + i).innerHTML = b[i].qty;
-    document.getElementById("prodprice" + i).innerHTML ="€ " + b[i].price;
+    document.getElementById("prodprice" + i).innerHTML ="€ " + String(b[i].price).replace(".", ",");
     sum += b[i].price * b[i].qty;
   }
   document.getElementById("totalPrice").innerHTML = "€ " + Math.round(sum);
