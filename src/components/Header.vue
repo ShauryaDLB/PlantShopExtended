@@ -7,9 +7,9 @@
       <router-link :to="'/' + $i18n.locale" id="plantShop">
         <h1>{{ $t("title") }}</h1>
       </router-link>
-      <input type="text" class="form-control" />
+      <input type="text" class="form-control" id="searchterm" />
       <span class="input-group-text">
-        <i class="fa fa-search"></i>
+       <a id="searchid" href="#"> <i class="fa fa-search"></i></a>
       </span>
     </div>
     <div v-if="authorize()" class="menu-bar">
