@@ -1,8 +1,8 @@
 <template>
   <div class="showcase-product">
     <div class="product-top">
-      <router-link :to="'/' + $i18n.locale + '/product' + '/' + id" id="bottomP" class="product"
-        ><img :src="image" :alt="name"
+      <router-link :to="'/' + $i18n.locale + '/product' + '/' + id" @click="reloadd"  class="product"
+        ><img :src="image" :alt="name" id="bottomP"
       /></router-link>
       <div class="overlay-right">
         <router-link
@@ -26,8 +26,8 @@
       <i class="fa fa-star"></i>
       <i class="fa fa-star-half-o"></i>
       <i class="fa fa-star-o"></i>
-      <h3>{{ name }}</h3>
-      <h5>€ {{ price }}</h5>
+      <h3 id="prodName">{{ name }}</h3>
+      <h5 id="prodPrice">€ {{ outputPricee }}</h5>
     </div>
   </div>
 </template>
@@ -41,6 +41,16 @@ export default {
     image: String,
     name: String,
     price: Number
+  },
+  computed: {
+    outputPricee() {
+      return String(this.price).replace(".", ",");
+    }
+  },
+  methods: {
+    reloadd(){
+      location.reload();
+    }
   }
 };
 </script>
