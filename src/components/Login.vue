@@ -43,8 +43,8 @@ export default {
     return {
       authenticated: true,
       mockAccount: {
-        mockuser: "shaurya",
-        mockpass: "123"
+        mockuser: "testAccount",
+        mockpass: "test235"
       },
       username: "",
       password: "",

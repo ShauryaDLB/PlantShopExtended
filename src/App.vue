@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     validateBeforeSubmit () {
-      if (this.password === '123') {
+      if (this.password === 'test123') {
         this.error = false
         this.access = true
         window.localStorage.setItem('user', 'allow');
