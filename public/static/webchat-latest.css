@@ -50,7 +50,7 @@ div.main form input[data-id="webchat-sendbox-input"]{background-color:#fff;paddi
 .minimizable-web-chat>.maximize .ms-Icon--CircleShapeSolid{font-size:16px;margin-top:0}
 .minimizable-web-chat>.chat-box{background-color:rgba(27,173,162,0.8);backdrop-filter:blur(10px);box-shadow:0 0 20px rgba(0,0,0,0.2);border:1px solid #1bada2;bottom:20px;display:flex;flex-direction:column;max-width:400px;min-width:320px;position:fixed;right:20px;top:20px;width:40%;z-index:500}
 .minimizable-web-chat>.chat-box.hide{display:none}
-.minimizable-web-chat>.chat-box>header{background-color:#1bada2;color: white;display:flex;height:40px}
+.minimizable-web-chat>.chat-box>header{background-color:#ff9a1e;color: white;display:flex;height:40px}
 .minimizable-web-chat>.chat-box>header>.filler{flex:0 10000 100%;padding:10px;font-size:large;font-weight:700}
 .minimizable-web-chat>.chat-box>header>button{background-color:#F0F0F0;border-radius:12.5px;border:0;color:#1bada2;height:25px;outline:0;width:25px;margin:10px}
 .minimizable-web-chat>.chat-box>header>button .ms-Icon{font-size:0.75em}
