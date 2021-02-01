@@ -28,7 +28,6 @@ div[role="form"] div.main form input[data-id="webchat-sendbox-input"] {
     padding: 0.1rem 0.3rem;
 }
 .webchat__bubble__content ol {
-    background-color: teal;
     padding-inline-start: 40px;
 }
 .webchat__bubble__content ol li {
