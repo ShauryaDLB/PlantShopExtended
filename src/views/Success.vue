@@ -17,6 +17,7 @@
           <td id="prodprice0"></td>
         </tr>
         <tr>
+                  <tr>
           <td id="prod1"></td>
           <td id="prodqty1"></td>
           <td id="prodprice1"></td>
@@ -71,7 +72,20 @@ window.onload = function() {
   document.getElementById("totalPrice").innerHTML = "€ " + Math.round(sum);
 };
 export default {
-  name: "Success"
+  name: "Success", 
+  mounted() {
+      var a = JSON.parse(window.localStorage.getItem("vuex"));
+  var b = a["cartProducts"];
+  var i;
+  var sum =0;
+  for (i = 0; i < b.length; i++) {
+    document.getElementById("prod" + i).innerHTML = b[i].title;
+    document.getElementById("prodqty" + i).innerHTML = b[i].qty;
+    document.getElementById("prodprice" + i).innerHTML ="€ " + String(b[i].price).replace(".", ",");
+    sum += b[i].price * b[i].qty;
+  }
+  document.getElementById("totalPrice").innerHTML = "€ " + Math.round(sum);
+  }
 };
 </script>
 <style scoped>
